@@ -2,12 +2,12 @@ use std::{fs};
 
 const PATH: &str = "src/year2015/day01/data.raw";
 
-pub fn read_file() -> String {
+fn read_file() -> String {
   println!("Reading a file: {PATH}");
   return fs::read_to_string(PATH).expect("Should be able to read the file");
 }
 
-pub fn part1() -> i32 {
+fn part1() -> i32 {
   let contents = read_file();
 
   let mut counter = 0;
@@ -19,7 +19,7 @@ pub fn part1() -> i32 {
   return counter;
 }
 
-pub fn part2() -> usize {
+fn part2() -> usize {
   let contents = read_file();
 
   let mut counter: i32 = 0;
