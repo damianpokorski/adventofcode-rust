@@ -1,0 +1,43 @@
+use std::{fs};
+
+const PATH: &str = "src/year2015/day01/data.raw";
+
+pub fn read_file() -> String {
+  println!("Reading a file: {PATH}");
+  return fs::read_to_string(PATH).expect("Should be able to read the file");
+}
+
+pub fn part1() -> i32 {
+  let contents = read_file();
+
+  let mut counter = 0;
+
+  for char in contents.chars().into_iter() {
+    counter = counter + if char.to_string() == "(" { 1 } else { -1 }
+  }
+
+  return counter;
+}
+
+pub fn part2() -> usize {
+  let contents = read_file();
+
+  let mut counter: i32 = 0;
+
+  for (index,char) in contents.chars().into_iter().enumerate() {
+    counter = counter + if char.to_string() == "(" { 1 } else { -1 };
+
+    if counter == -1 {
+      return index+1;
+    }
+  }
+
+  return 0;
+}
+
+pub fn puzzle() {
+  let result = part1();
+  println!("Part1: {result}");
+  let result = part2();
+  println!("Part2: {result}");
+}
