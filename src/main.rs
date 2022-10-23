@@ -2,6 +2,7 @@ use std::env::{args};
 pub mod year2015 {
     pub mod day01;
     pub mod day02;
+    pub mod day03;
 }
 
 fn main() {
@@ -16,6 +17,7 @@ fn main() {
             match day {
                 1 => year2015::day01::puzzle(),
                 2 => year2015::day02::puzzle(),
+                3 => year2015::day03::puzzle(),
                 _ => println!("Invalid day")
             }
         }
