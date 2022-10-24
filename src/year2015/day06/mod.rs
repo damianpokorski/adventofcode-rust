@@ -80,7 +80,7 @@ fn part2() -> i64 {
         match state {
             Some(true) => grid[x][y] += 1,
             Some(false) => {
-              if(grid[x][y] >= 1) {
+              if grid[x][y] >= 1 {
                 grid[x][y] -= 1
               }
             },
