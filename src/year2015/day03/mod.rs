@@ -1,4 +1,4 @@
-use std::{fs, cmp::min, collections::HashMap};
+use std::{fs, collections::HashMap};
 
 const PATH: &str = "src/year2015/day03/data.raw";
 

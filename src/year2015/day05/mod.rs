@@ -5,7 +5,7 @@ use fancy_regex::Regex;
 const PATH: &str = "src/year2015/day05/data.raw";
 
 fn read_file() -> String {
-  // println!("Reading a file: {PATH}");
+  println!("Reading a file: {PATH}");
   return fs::read_to_string(PATH).expect("Should be able to read the file");
 }
 
@@ -29,11 +29,11 @@ fn part1() -> (i32, i32) {
     // Iterate through characters
     for letter in letters {
       // Vowel counting
-      if(vowels.contains(&letter)){
+      if vowels.contains(&letter) {
         vowel_counter+=1;
       }
       // Repeated letters
-      if(last_letter == letter) {
+      if last_letter == letter {
         repeated_letters +=1;
       }
       // Disallowed
@@ -46,7 +46,7 @@ fn part1() -> (i32, i32) {
       last_letter = letter;
     }
     // Decides
-    if(disallowed == false && vowel_counter >= 3 && repeated_letters >=1) {
+    if disallowed == false && vowel_counter >= 3 && repeated_letters >=1 {
       nice += 1;
     } else {
       naughty +=1;

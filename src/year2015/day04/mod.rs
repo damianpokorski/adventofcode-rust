@@ -1,6 +1,4 @@
-use std::{fs, result};
-
-use md5::Digest;
+use std::{fs};
 
 const PATH: &str = "src/year2015/day04/data.raw";
 
@@ -14,15 +12,13 @@ fn calc(start_with: &String) -> (i32, String) {
   let answer:String = read_file();
   let mut i = 0;
 
-  while true {
+  loop {
     let md5val = format!("{:x}", md5::compute(format!("{answer}{i}")));
     if md5val.starts_with(start_with) {
       return (i, md5val);
     }
     i += 1;
   }
-
-  return (-1, String::from(""));
 }
 
 fn part1() -> (i32, String) {
