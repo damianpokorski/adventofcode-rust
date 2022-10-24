@@ -1,11 +1,6 @@
-use std::env::{args};
-pub mod year2015 {
-    pub mod day01;
-    pub mod day02;
-    pub mod day03;
-    pub mod day04;
-    pub mod day05;
-}
+use std::{env::{args}};
+
+pub mod year2015;
 
 fn main() {
     let year = args().nth(1).expect("No year provided");
@@ -22,6 +17,7 @@ fn main() {
                 3 => year2015::day03::puzzle(),
                 4 => year2015::day04::puzzle(),
                 5 => year2015::day05::puzzle(),
+                6 => year2015::day06::puzzle(),
                 _ => println!("Invalid day")
             }
         }

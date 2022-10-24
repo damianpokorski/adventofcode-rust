@@ -1,6 +1,4 @@
-use std::{fs, vec};
-
-use fancy_regex::Regex;
+use std::{fs};
 
 const PATH: &str = "src/year2015/day06/data.raw";
 
@@ -9,11 +7,13 @@ fn read_file() -> String {
   return fs::read_to_string(PATH).expect("Should be able to read the file");
 }
 
-fn part1() -> (i32) {
+fn part1() -> i32 {
+  read_file();
   return -1;
 }
 
-fn part2() -> (i32) {
+fn part2() -> i32 {
+  read_file();
   return -1;
 }
 
