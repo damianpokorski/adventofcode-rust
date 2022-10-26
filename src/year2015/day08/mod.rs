@@ -39,31 +39,31 @@ fn part1() -> i32 {
 }
 
 fn part2() -> i32 {
-    let quote_mark_finder = Regex::new(r#"^(\")(.*)(\")$"#).unwrap();
-    let hexadecimal_adder = Regex::new(r#"(\\x[a-f0-9]{2})"#).unwrap();
-    let double_escape = Regex::new(r#"(\\)(.)"#).unwrap();
+    let replaces = vec![
+        (Regex::new(r#"(\\x)([a-f0-9]{2})"#).unwrap(), "__x00"),
+        (Regex::new(r#"(\\|\")"#).unwrap(), "\\$1"),
+        (Regex::new(r#"^(.*)$"#).unwrap(), "\"$1\""),
+    ];
 
     let mut sum: i32 = 0;
     for line in read_file().split("\n").into_iter() {
-        println!("{:?}", line);
-        let question_marks = &quote_mark_finder
-            .replace_all(&line, "$1$1$2$3$3")
-            .into_owned();
-        let hexes = &hexadecimal_adder
-            .replace_all(question_marks, "\\$1")
-            .into_owned();
-        let backslashes = &double_escape.replace_all(&hexes, "$1$1$2").into_owned();
+        println!("{0}", line);
+        let mut buffer = line.clone().to_string();
+        let mut pass = 0;
+        for (replace, replace_str) in &replaces {
+            pass += 1;
+            println!("[{0}] Before: {1}", pass, buffer);
+            buffer = replace
+                .replace_all(&buffer, replace_str.clone())
+                .into_owned();
+            println!("[{0}] After: {1}", pass, buffer);
+        }
 
-        println!("1: {:?}", question_marks);
-        println!("2: {:?}", hexes);
-        println!("3: {:?}", backslashes);
-        println!(
-            "Original {:?} - Cleared {:?}",
-            line.len(),
-            backslashes.len()
-        );
+        println!("Final: {0}", buffer);
 
-        sum += (backslashes.len() as i32) - (line.len() as i32);
+        println!("Original {:?} - Escaped {:?}", line.len(), buffer.len());
+
+        sum += (buffer.len() as i32) - (line.len() as i32);
         println!("---");
     }
     return sum;
