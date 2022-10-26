@@ -1,4 +1,4 @@
-use std::{collections::VecDeque, fs, num::ParseIntError};
+use std::{fs, num::ParseIntError};
 
 const PATH: &str = "src/year2015/day07/data.raw";
 
@@ -37,8 +37,6 @@ impl Evaluable for Wire {
     }
 
     fn evalate(&self) -> u16 {
-        // println!("About to evaluate");
-        // println!("{:?}", self);
         if self.evaluable() {
             match self.op {
                 Gate::NONE => return self.left_value.unwrap(),
@@ -48,7 +46,6 @@ impl Evaluable for Wire {
                 Gate::XOR => return self.left_value.unwrap() ^ self.right_value.unwrap(),
                 Gate::LSHIFT => return self.left_value.unwrap() << self.right_value.unwrap(),
                 Gate::RSHIFT => return self.left_value.unwrap() >> self.right_value.unwrap(),
-                _ => return 0,
             }
         }
         return 0;
@@ -195,7 +192,7 @@ fn process(wires: Vec<Wire>) -> Vec<Wire> {
     return wires;
 }
 
-fn part1() -> (u16) {
+fn part1() -> u16 {
     let wires = process(parse());
 
     let target = "a".to_string();
@@ -211,7 +208,7 @@ fn part1() -> (u16) {
     return 0;
 }
 
-fn part2() -> (u16) {
+fn part2() -> u16 {
     // part 1
 
     let wires = process(parse());
@@ -227,7 +224,7 @@ fn part2() -> (u16) {
 
     // Update target b to value of a
     let b = "b".to_string();
-    let mut wires: Vec<Wire> = parse()
+    let wires: Vec<Wire> = parse()
         .into_iter()
         .map(|wire| {
             if wire.target == b {
