@@ -1,0 +1,7 @@
+A to B = 2
+B to C = 2
+C to D = 2
+A to C = 1
+C to E = 1
+E to B = 1
+B to D = 1

@@ -1,0 +1,2757 @@
+Reading a file: src/year2015/day09/data.raw
+["Snowdin"] - [Link { from: "Snowdin", to: "Tambi", distance: 15 }, Link { from: "Snowdin", to: "Straylight", distance: 99 }]
+----
+["Arbre"] - [Link { from: "Arbre", to: "Snowdin", distance: 129 }, Link { from: "Arbre", to: "Tambi", distance: 53 }, Link { from: "Arbre", to: "Straylight", distance: 40 }]
+----
+["Tambi"] - [Link { from: "Tambi", to: "Straylight", distance: 70 }]
+----
+["Faerun"] - [Link { from: "Faerun", to: "Norrath", distance: 129 }, Link { from: "Faerun", to: "Tristram", distance: 58 }, Link { from: "Faerun", to: "AlphaCentauri", distance: 13 }, Link { from: "Faerun", to: "Arbre", distance: 24 }, Link { from: "Faerun", to: "Snowdin", distance: 60 }, Link { from: "Faerun", to: "Tambi", distance: 71 }, Link { from: "Faerun", to: "Straylight", distance: 67 }]
+----
+["Norrath"] - [Link { from: "Norrath", to: "Tristram", distance: 142 }, Link { from: "Norrath", to: "AlphaCentauri", distance: 15 }, Link { from: "Norrath", to: "Arbre", distance: 135 }, Link { from: "Norrath", to: "Snowdin", distance: 75 }, Link { from: "Norrath", to: "Tambi", distance: 82 }, Link { from: "Norrath", to: "Straylight", distance: 54 }]
+----
+["Tristram"] - [Link { from: "Tristram", to: "AlphaCentauri", distance: 118 }, Link { from: "Tristram", to: "Arbre", distance: 122 }, Link { from: "Tristram", to: "Snowdin", distance: 103 }, Link { from: "Tristram", to: "Tambi", distance: 49 }, Link { from: "Tristram", to: "Straylight", distance: 97 }]
+----
+["AlphaCentauri"] - [Link { from: "AlphaCentauri", to: "Arbre", distance: 116 }, Link { from: "AlphaCentauri", to: "Snowdin", distance: 12 }, Link { from: "AlphaCentauri", to: "Tambi", distance: 18 }, Link { from: "AlphaCentauri", to: "Straylight", distance: 91 }]
+----
+----
+----------
+Tick 0
+----------
+[0] Start
+[0] Current location: "Norrath"
+[0] Path so far: 
+[0] - "Faerun" -> "Norrath"
+[0] Available options: 
+[0] --- "Norrath" -> "Tristram"
+[0] --- "Norrath" -> "AlphaCentauri"
+[0] --- "Norrath" -> "Arbre"
+[0] --- "Norrath" -> "Snowdin"
+[0] --- "Norrath" -> "Tambi"
+[0] --- "Norrath" -> "Straylight"
+[0] Iterating through links: 
+[0] --- "Norrath" -> "Tristram"
+----------
+[1] Start
+[1] Current location: "Tristram"
+[1] Path so far: 
+[1] - "Faerun" -> "Norrath"
+[1] - "Norrath" -> "Tristram"
+[1] Available options: 
+[1] --- "Tristram" -> "AlphaCentauri"
+[1] --- "Tristram" -> "Arbre"
+[1] --- "Tristram" -> "Snowdin"
+[1] --- "Tristram" -> "Tambi"
+[1] --- "Tristram" -> "Straylight"
+[1] Iterating through links: 
+[1] --- "Tristram" -> "AlphaCentauri"
+----------
+[2] Start
+[2] Current location: "AlphaCentauri"
+[2] Path so far: 
+[2] - "Faerun" -> "Norrath"
+[2] - "Norrath" -> "Tristram"
+[2] - "Tristram" -> "AlphaCentauri"
+[2] Available options: 
+[2] --- "AlphaCentauri" -> "Arbre"
+[2] --- "AlphaCentauri" -> "Snowdin"
+[2] --- "AlphaCentauri" -> "Tambi"
+[2] --- "AlphaCentauri" -> "Straylight"
+[2] Iterating through links: 
+[2] --- "AlphaCentauri" -> "Arbre"
+----------
+[3] Start
+[3] Current location: "Arbre"
+[3] Path so far: 
+[3] - "Faerun" -> "Norrath"
+[3] - "Norrath" -> "Tristram"
+[3] - "Tristram" -> "AlphaCentauri"
+[3] - "AlphaCentauri" -> "Arbre"
+[3] Available options: 
+[3] --- "Arbre" -> "Snowdin"
+[3] --- "Arbre" -> "Tambi"
+[3] --- "Arbre" -> "Straylight"
+[3] Iterating through links: 
+[3] --- "Arbre" -> "Snowdin"
+----------
+[4] Start
+[4] Current location: "Snowdin"
+[4] Path so far: 
+[4] - "Faerun" -> "Norrath"
+[4] - "Norrath" -> "Tristram"
+[4] - "Tristram" -> "AlphaCentauri"
+[4] - "AlphaCentauri" -> "Arbre"
+[4] - "Arbre" -> "Snowdin"
+[4] Available options: 
+[4] --- "Snowdin" -> "Tambi"
+[4] --- "Snowdin" -> "Straylight"
+[4] Iterating through links: 
+[4] --- "Snowdin" -> "Tambi"
+----------
+[5] Start
+[5] Current location: "Tambi"
+[5] Path so far: 
+[5] - "Faerun" -> "Norrath"
+[5] - "Norrath" -> "Tristram"
+[5] - "Tristram" -> "AlphaCentauri"
+[5] - "AlphaCentauri" -> "Arbre"
+[5] - "Arbre" -> "Snowdin"
+[5] - "Snowdin" -> "Tambi"
+[5] Available options: 
+[5] --- "Tambi" -> "Straylight"
+[5] Iterating through links: 
+[5] --- "Tambi" -> "Straylight"
+----------
+[6] Start
+[6] Current location: "Straylight"
+[6] Path so far: 
+[6] - "Faerun" -> "Norrath"
+[6] - "Norrath" -> "Tristram"
+[6] - "Tristram" -> "AlphaCentauri"
+[6] - "AlphaCentauri" -> "Arbre"
+[6] - "Arbre" -> "Snowdin"
+[6] - "Snowdin" -> "Tambi"
+[6] - "Tambi" -> "Straylight"
+[6] No travel options available: 
+[6] We have visited all of the places!
+[4] --- "Snowdin" -> "Straylight"
+----------
+[5] Start
+[5] Current location: "Straylight"
+[5] Path so far: 
+[5] - "Faerun" -> "Norrath"
+[5] - "Norrath" -> "Tristram"
+[5] - "Tristram" -> "AlphaCentauri"
+[5] - "AlphaCentauri" -> "Arbre"
+[5] - "Arbre" -> "Snowdin"
+[5] - "Snowdin" -> "Straylight"
+[5] No travel options available: 
+[3] --- "Arbre" -> "Tambi"
+----------
+[4] Start
+[4] Current location: "Tambi"
+[4] Path so far: 
+[4] - "Faerun" -> "Norrath"
+[4] - "Norrath" -> "Tristram"
+[4] - "Tristram" -> "AlphaCentauri"
+[4] - "AlphaCentauri" -> "Arbre"
+[4] - "Arbre" -> "Tambi"
+[4] Available options: 
+[4] --- "Tambi" -> "Straylight"
+[4] Iterating through links: 
+[4] --- "Tambi" -> "Straylight"
+----------
+[5] Start
+[5] Current location: "Straylight"
+[5] Path so far: 
+[5] - "Faerun" -> "Norrath"
+[5] - "Norrath" -> "Tristram"
+[5] - "Tristram" -> "AlphaCentauri"
+[5] - "AlphaCentauri" -> "Arbre"
+[5] - "Arbre" -> "Tambi"
+[5] - "Tambi" -> "Straylight"
+[5] No travel options available: 
+No subpaths returned valid results
+[3] --- "Arbre" -> "Straylight"
+----------
+[4] Start
+[4] Current location: "Straylight"
+[4] Path so far: 
+[4] - "Faerun" -> "Norrath"
+[4] - "Norrath" -> "Tristram"
+[4] - "Tristram" -> "AlphaCentauri"
+[4] - "AlphaCentauri" -> "Arbre"
+[4] - "Arbre" -> "Straylight"
+[4] No travel options available: 
+[2] --- "AlphaCentauri" -> "Snowdin"
+----------
+[3] Start
+[3] Current location: "Snowdin"
+[3] Path so far: 
+[3] - "Faerun" -> "Norrath"
+[3] - "Norrath" -> "Tristram"
+[3] - "Tristram" -> "AlphaCentauri"
+[3] - "AlphaCentauri" -> "Snowdin"
+[3] Available options: 
+[3] --- "Snowdin" -> "Tambi"
+[3] --- "Snowdin" -> "Straylight"
+[3] Iterating through links: 
+[3] --- "Snowdin" -> "Tambi"
+----------
+[4] Start
+[4] Current location: "Tambi"
+[4] Path so far: 
+[4] - "Faerun" -> "Norrath"
+[4] - "Norrath" -> "Tristram"
+[4] - "Tristram" -> "AlphaCentauri"
+[4] - "AlphaCentauri" -> "Snowdin"
+[4] - "Snowdin" -> "Tambi"
+[4] Available options: 
+[4] --- "Tambi" -> "Straylight"
+[4] Iterating through links: 
+[4] --- "Tambi" -> "Straylight"
+----------
+[5] Start
+[5] Current location: "Straylight"
+[5] Path so far: 
+[5] - "Faerun" -> "Norrath"
+[5] - "Norrath" -> "Tristram"
+[5] - "Tristram" -> "AlphaCentauri"
+[5] - "AlphaCentauri" -> "Snowdin"
+[5] - "Snowdin" -> "Tambi"
+[5] - "Tambi" -> "Straylight"
+[5] No travel options available: 
+No subpaths returned valid results
+[3] --- "Snowdin" -> "Straylight"
+----------
+[4] Start
+[4] Current location: "Straylight"
+[4] Path so far: 
+[4] - "Faerun" -> "Norrath"
+[4] - "Norrath" -> "Tristram"
+[4] - "Tristram" -> "AlphaCentauri"
+[4] - "AlphaCentauri" -> "Snowdin"
+[4] - "Snowdin" -> "Straylight"
+[4] No travel options available: 
+No subpaths returned valid results
+[2] --- "AlphaCentauri" -> "Tambi"
+----------
+[3] Start
+[3] Current location: "Tambi"
+[3] Path so far: 
+[3] - "Faerun" -> "Norrath"
+[3] - "Norrath" -> "Tristram"
+[3] - "Tristram" -> "AlphaCentauri"
+[3] - "AlphaCentauri" -> "Tambi"
+[3] Available options: 
+[3] --- "Tambi" -> "Straylight"
+[3] Iterating through links: 
+[3] --- "Tambi" -> "Straylight"
+----------
+[4] Start
+[4] Current location: "Straylight"
+[4] Path so far: 
+[4] - "Faerun" -> "Norrath"
+[4] - "Norrath" -> "Tristram"
+[4] - "Tristram" -> "AlphaCentauri"
+[4] - "AlphaCentauri" -> "Tambi"
+[4] - "Tambi" -> "Straylight"
+[4] No travel options available: 
+No subpaths returned valid results
+[2] --- "AlphaCentauri" -> "Straylight"
+----------
+[3] Start
+[3] Current location: "Straylight"
+[3] Path so far: 
+[3] - "Faerun" -> "Norrath"
+[3] - "Norrath" -> "Tristram"
+[3] - "Tristram" -> "AlphaCentauri"
+[3] - "AlphaCentauri" -> "Straylight"
+[3] No travel options available: 
+[1] --- "Tristram" -> "Arbre"
+----------
+[2] Start
+[2] Current location: "Arbre"
+[2] Path so far: 
+[2] - "Faerun" -> "Norrath"
+[2] - "Norrath" -> "Tristram"
+[2] - "Tristram" -> "Arbre"
+[2] Available options: 
+[2] --- "Arbre" -> "Snowdin"
+[2] --- "Arbre" -> "Tambi"
+[2] --- "Arbre" -> "Straylight"
+[2] Iterating through links: 
+[2] --- "Arbre" -> "Snowdin"
+----------
+[3] Start
+[3] Current location: "Snowdin"
+[3] Path so far: 
+[3] - "Faerun" -> "Norrath"
+[3] - "Norrath" -> "Tristram"
+[3] - "Tristram" -> "Arbre"
+[3] - "Arbre" -> "Snowdin"
+[3] Available options: 
+[3] --- "Snowdin" -> "Tambi"
+[3] --- "Snowdin" -> "Straylight"
+[3] Iterating through links: 
+[3] --- "Snowdin" -> "Tambi"
+----------
+[4] Start
+[4] Current location: "Tambi"
+[4] Path so far: 
+[4] - "Faerun" -> "Norrath"
+[4] - "Norrath" -> "Tristram"
+[4] - "Tristram" -> "Arbre"
+[4] - "Arbre" -> "Snowdin"
+[4] - "Snowdin" -> "Tambi"
+[4] Available options: 
+[4] --- "Tambi" -> "Straylight"
+[4] Iterating through links: 
+[4] --- "Tambi" -> "Straylight"
+----------
+[5] Start
+[5] Current location: "Straylight"
+[5] Path so far: 
+[5] - "Faerun" -> "Norrath"
+[5] - "Norrath" -> "Tristram"
+[5] - "Tristram" -> "Arbre"
+[5] - "Arbre" -> "Snowdin"
+[5] - "Snowdin" -> "Tambi"
+[5] - "Tambi" -> "Straylight"
+[5] No travel options available: 
+No subpaths returned valid results
+[3] --- "Snowdin" -> "Straylight"
+----------
+[4] Start
+[4] Current location: "Straylight"
+[4] Path so far: 
+[4] - "Faerun" -> "Norrath"
+[4] - "Norrath" -> "Tristram"
+[4] - "Tristram" -> "Arbre"
+[4] - "Arbre" -> "Snowdin"
+[4] - "Snowdin" -> "Straylight"
+[4] No travel options available: 
+No subpaths returned valid results
+[2] --- "Arbre" -> "Tambi"
+----------
+[3] Start
+[3] Current location: "Tambi"
+[3] Path so far: 
+[3] - "Faerun" -> "Norrath"
+[3] - "Norrath" -> "Tristram"
+[3] - "Tristram" -> "Arbre"
+[3] - "Arbre" -> "Tambi"
+[3] Available options: 
+[3] --- "Tambi" -> "Straylight"
+[3] Iterating through links: 
+[3] --- "Tambi" -> "Straylight"
+----------
+[4] Start
+[4] Current location: "Straylight"
+[4] Path so far: 
+[4] - "Faerun" -> "Norrath"
+[4] - "Norrath" -> "Tristram"
+[4] - "Tristram" -> "Arbre"
+[4] - "Arbre" -> "Tambi"
+[4] - "Tambi" -> "Straylight"
+[4] No travel options available: 
+No subpaths returned valid results
+[2] --- "Arbre" -> "Straylight"
+----------
+[3] Start
+[3] Current location: "Straylight"
+[3] Path so far: 
+[3] - "Faerun" -> "Norrath"
+[3] - "Norrath" -> "Tristram"
+[3] - "Tristram" -> "Arbre"
+[3] - "Arbre" -> "Straylight"
+[3] No travel options available: 
+No subpaths returned valid results
+[1] --- "Tristram" -> "Snowdin"
+----------
+[2] Start
+[2] Current location: "Snowdin"
+[2] Path so far: 
+[2] - "Faerun" -> "Norrath"
+[2] - "Norrath" -> "Tristram"
+[2] - "Tristram" -> "Snowdin"
+[2] Available options: 
+[2] --- "Snowdin" -> "Tambi"
+[2] --- "Snowdin" -> "Straylight"
+[2] Iterating through links: 
+[2] --- "Snowdin" -> "Tambi"
+----------
+[3] Start
+[3] Current location: "Tambi"
+[3] Path so far: 
+[3] - "Faerun" -> "Norrath"
+[3] - "Norrath" -> "Tristram"
+[3] - "Tristram" -> "Snowdin"
+[3] - "Snowdin" -> "Tambi"
+[3] Available options: 
+[3] --- "Tambi" -> "Straylight"
+[3] Iterating through links: 
+[3] --- "Tambi" -> "Straylight"
+----------
+[4] Start
+[4] Current location: "Straylight"
+[4] Path so far: 
+[4] - "Faerun" -> "Norrath"
+[4] - "Norrath" -> "Tristram"
+[4] - "Tristram" -> "Snowdin"
+[4] - "Snowdin" -> "Tambi"
+[4] - "Tambi" -> "Straylight"
+[4] No travel options available: 
+No subpaths returned valid results
+[2] --- "Snowdin" -> "Straylight"
+----------
+[3] Start
+[3] Current location: "Straylight"
+[3] Path so far: 
+[3] - "Faerun" -> "Norrath"
+[3] - "Norrath" -> "Tristram"
+[3] - "Tristram" -> "Snowdin"
+[3] - "Snowdin" -> "Straylight"
+[3] No travel options available: 
+No subpaths returned valid results
+[1] --- "Tristram" -> "Tambi"
+----------
+[2] Start
+[2] Current location: "Tambi"
+[2] Path so far: 
+[2] - "Faerun" -> "Norrath"
+[2] - "Norrath" -> "Tristram"
+[2] - "Tristram" -> "Tambi"
+[2] Available options: 
+[2] --- "Tambi" -> "Straylight"
+[2] Iterating through links: 
+[2] --- "Tambi" -> "Straylight"
+----------
+[3] Start
+[3] Current location: "Straylight"
+[3] Path so far: 
+[3] - "Faerun" -> "Norrath"
+[3] - "Norrath" -> "Tristram"
+[3] - "Tristram" -> "Tambi"
+[3] - "Tambi" -> "Straylight"
+[3] No travel options available: 
+No subpaths returned valid results
+[1] --- "Tristram" -> "Straylight"
+----------
+[2] Start
+[2] Current location: "Straylight"
+[2] Path so far: 
+[2] - "Faerun" -> "Norrath"
+[2] - "Norrath" -> "Tristram"
+[2] - "Tristram" -> "Straylight"
+[2] No travel options available: 
+[0] --- "Norrath" -> "AlphaCentauri"
+----------
+[1] Start
+[1] Current location: "AlphaCentauri"
+[1] Path so far: 
+[1] - "Faerun" -> "Norrath"
+[1] - "Norrath" -> "AlphaCentauri"
+[1] Available options: 
+[1] --- "AlphaCentauri" -> "Arbre"
+[1] --- "AlphaCentauri" -> "Snowdin"
+[1] --- "AlphaCentauri" -> "Tambi"
+[1] --- "AlphaCentauri" -> "Straylight"
+[1] Iterating through links: 
+[1] --- "AlphaCentauri" -> "Arbre"
+----------
+[2] Start
+[2] Current location: "Arbre"
+[2] Path so far: 
+[2] - "Faerun" -> "Norrath"
+[2] - "Norrath" -> "AlphaCentauri"
+[2] - "AlphaCentauri" -> "Arbre"
+[2] Available options: 
+[2] --- "Arbre" -> "Snowdin"
+[2] --- "Arbre" -> "Tambi"
+[2] --- "Arbre" -> "Straylight"
+[2] Iterating through links: 
+[2] --- "Arbre" -> "Snowdin"
+----------
+[3] Start
+[3] Current location: "Snowdin"
+[3] Path so far: 
+[3] - "Faerun" -> "Norrath"
+[3] - "Norrath" -> "AlphaCentauri"
+[3] - "AlphaCentauri" -> "Arbre"
+[3] - "Arbre" -> "Snowdin"
+[3] Available options: 
+[3] --- "Snowdin" -> "Tambi"
+[3] --- "Snowdin" -> "Straylight"
+[3] Iterating through links: 
+[3] --- "Snowdin" -> "Tambi"
+----------
+[4] Start
+[4] Current location: "Tambi"
+[4] Path so far: 
+[4] - "Faerun" -> "Norrath"
+[4] - "Norrath" -> "AlphaCentauri"
+[4] - "AlphaCentauri" -> "Arbre"
+[4] - "Arbre" -> "Snowdin"
+[4] - "Snowdin" -> "Tambi"
+[4] Available options: 
+[4] --- "Tambi" -> "Straylight"
+[4] Iterating through links: 
+[4] --- "Tambi" -> "Straylight"
+----------
+[5] Start
+[5] Current location: "Straylight"
+[5] Path so far: 
+[5] - "Faerun" -> "Norrath"
+[5] - "Norrath" -> "AlphaCentauri"
+[5] - "AlphaCentauri" -> "Arbre"
+[5] - "Arbre" -> "Snowdin"
+[5] - "Snowdin" -> "Tambi"
+[5] - "Tambi" -> "Straylight"
+[5] No travel options available: 
+No subpaths returned valid results
+[3] --- "Snowdin" -> "Straylight"
+----------
+[4] Start
+[4] Current location: "Straylight"
+[4] Path so far: 
+[4] - "Faerun" -> "Norrath"
+[4] - "Norrath" -> "AlphaCentauri"
+[4] - "AlphaCentauri" -> "Arbre"
+[4] - "Arbre" -> "Snowdin"
+[4] - "Snowdin" -> "Straylight"
+[4] No travel options available: 
+No subpaths returned valid results
+[2] --- "Arbre" -> "Tambi"
+----------
+[3] Start
+[3] Current location: "Tambi"
+[3] Path so far: 
+[3] - "Faerun" -> "Norrath"
+[3] - "Norrath" -> "AlphaCentauri"
+[3] - "AlphaCentauri" -> "Arbre"
+[3] - "Arbre" -> "Tambi"
+[3] Available options: 
+[3] --- "Tambi" -> "Straylight"
+[3] Iterating through links: 
+[3] --- "Tambi" -> "Straylight"
+----------
+[4] Start
+[4] Current location: "Straylight"
+[4] Path so far: 
+[4] - "Faerun" -> "Norrath"
+[4] - "Norrath" -> "AlphaCentauri"
+[4] - "AlphaCentauri" -> "Arbre"
+[4] - "Arbre" -> "Tambi"
+[4] - "Tambi" -> "Straylight"
+[4] No travel options available: 
+No subpaths returned valid results
+[2] --- "Arbre" -> "Straylight"
+----------
+[3] Start
+[3] Current location: "Straylight"
+[3] Path so far: 
+[3] - "Faerun" -> "Norrath"
+[3] - "Norrath" -> "AlphaCentauri"
+[3] - "AlphaCentauri" -> "Arbre"
+[3] - "Arbre" -> "Straylight"
+[3] No travel options available: 
+No subpaths returned valid results
+[1] --- "AlphaCentauri" -> "Snowdin"
+----------
+[2] Start
+[2] Current location: "Snowdin"
+[2] Path so far: 
+[2] - "Faerun" -> "Norrath"
+[2] - "Norrath" -> "AlphaCentauri"
+[2] - "AlphaCentauri" -> "Snowdin"
+[2] Available options: 
+[2] --- "Snowdin" -> "Tambi"
+[2] --- "Snowdin" -> "Straylight"
+[2] Iterating through links: 
+[2] --- "Snowdin" -> "Tambi"
+----------
+[3] Start
+[3] Current location: "Tambi"
+[3] Path so far: 
+[3] - "Faerun" -> "Norrath"
+[3] - "Norrath" -> "AlphaCentauri"
+[3] - "AlphaCentauri" -> "Snowdin"
+[3] - "Snowdin" -> "Tambi"
+[3] Available options: 
+[3] --- "Tambi" -> "Straylight"
+[3] Iterating through links: 
+[3] --- "Tambi" -> "Straylight"
+----------
+[4] Start
+[4] Current location: "Straylight"
+[4] Path so far: 
+[4] - "Faerun" -> "Norrath"
+[4] - "Norrath" -> "AlphaCentauri"
+[4] - "AlphaCentauri" -> "Snowdin"
+[4] - "Snowdin" -> "Tambi"
+[4] - "Tambi" -> "Straylight"
+[4] No travel options available: 
+No subpaths returned valid results
+[2] --- "Snowdin" -> "Straylight"
+----------
+[3] Start
+[3] Current location: "Straylight"
+[3] Path so far: 
+[3] - "Faerun" -> "Norrath"
+[3] - "Norrath" -> "AlphaCentauri"
+[3] - "AlphaCentauri" -> "Snowdin"
+[3] - "Snowdin" -> "Straylight"
+[3] No travel options available: 
+No subpaths returned valid results
+[1] --- "AlphaCentauri" -> "Tambi"
+----------
+[2] Start
+[2] Current location: "Tambi"
+[2] Path so far: 
+[2] - "Faerun" -> "Norrath"
+[2] - "Norrath" -> "AlphaCentauri"
+[2] - "AlphaCentauri" -> "Tambi"
+[2] Available options: 
+[2] --- "Tambi" -> "Straylight"
+[2] Iterating through links: 
+[2] --- "Tambi" -> "Straylight"
+----------
+[3] Start
+[3] Current location: "Straylight"
+[3] Path so far: 
+[3] - "Faerun" -> "Norrath"
+[3] - "Norrath" -> "AlphaCentauri"
+[3] - "AlphaCentauri" -> "Tambi"
+[3] - "Tambi" -> "Straylight"
+[3] No travel options available: 
+No subpaths returned valid results
+[1] --- "AlphaCentauri" -> "Straylight"
+----------
+[2] Start
+[2] Current location: "Straylight"
+[2] Path so far: 
+[2] - "Faerun" -> "Norrath"
+[2] - "Norrath" -> "AlphaCentauri"
+[2] - "AlphaCentauri" -> "Straylight"
+[2] No travel options available: 
+No subpaths returned valid results
+[0] --- "Norrath" -> "Arbre"
+----------
+[1] Start
+[1] Current location: "Arbre"
+[1] Path so far: 
+[1] - "Faerun" -> "Norrath"
+[1] - "Norrath" -> "Arbre"
+[1] Available options: 
+[1] --- "Arbre" -> "Snowdin"
+[1] --- "Arbre" -> "Tambi"
+[1] --- "Arbre" -> "Straylight"
+[1] Iterating through links: 
+[1] --- "Arbre" -> "Snowdin"
+----------
+[2] Start
+[2] Current location: "Snowdin"
+[2] Path so far: 
+[2] - "Faerun" -> "Norrath"
+[2] - "Norrath" -> "Arbre"
+[2] - "Arbre" -> "Snowdin"
+[2] Available options: 
+[2] --- "Snowdin" -> "Tambi"
+[2] --- "Snowdin" -> "Straylight"
+[2] Iterating through links: 
+[2] --- "Snowdin" -> "Tambi"
+----------
+[3] Start
+[3] Current location: "Tambi"
+[3] Path so far: 
+[3] - "Faerun" -> "Norrath"
+[3] - "Norrath" -> "Arbre"
+[3] - "Arbre" -> "Snowdin"
+[3] - "Snowdin" -> "Tambi"
+[3] Available options: 
+[3] --- "Tambi" -> "Straylight"
+[3] Iterating through links: 
+[3] --- "Tambi" -> "Straylight"
+----------
+[4] Start
+[4] Current location: "Straylight"
+[4] Path so far: 
+[4] - "Faerun" -> "Norrath"
+[4] - "Norrath" -> "Arbre"
+[4] - "Arbre" -> "Snowdin"
+[4] - "Snowdin" -> "Tambi"
+[4] - "Tambi" -> "Straylight"
+[4] No travel options available: 
+No subpaths returned valid results
+[2] --- "Snowdin" -> "Straylight"
+----------
+[3] Start
+[3] Current location: "Straylight"
+[3] Path so far: 
+[3] - "Faerun" -> "Norrath"
+[3] - "Norrath" -> "Arbre"
+[3] - "Arbre" -> "Snowdin"
+[3] - "Snowdin" -> "Straylight"
+[3] No travel options available: 
+No subpaths returned valid results
+[1] --- "Arbre" -> "Tambi"
+----------
+[2] Start
+[2] Current location: "Tambi"
+[2] Path so far: 
+[2] - "Faerun" -> "Norrath"
+[2] - "Norrath" -> "Arbre"
+[2] - "Arbre" -> "Tambi"
+[2] Available options: 
+[2] --- "Tambi" -> "Straylight"
+[2] Iterating through links: 
+[2] --- "Tambi" -> "Straylight"
+----------
+[3] Start
+[3] Current location: "Straylight"
+[3] Path so far: 
+[3] - "Faerun" -> "Norrath"
+[3] - "Norrath" -> "Arbre"
+[3] - "Arbre" -> "Tambi"
+[3] - "Tambi" -> "Straylight"
+[3] No travel options available: 
+No subpaths returned valid results
+[1] --- "Arbre" -> "Straylight"
+----------
+[2] Start
+[2] Current location: "Straylight"
+[2] Path so far: 
+[2] - "Faerun" -> "Norrath"
+[2] - "Norrath" -> "Arbre"
+[2] - "Arbre" -> "Straylight"
+[2] No travel options available: 
+No subpaths returned valid results
+[0] --- "Norrath" -> "Snowdin"
+----------
+[1] Start
+[1] Current location: "Snowdin"
+[1] Path so far: 
+[1] - "Faerun" -> "Norrath"
+[1] - "Norrath" -> "Snowdin"
+[1] Available options: 
+[1] --- "Snowdin" -> "Tambi"
+[1] --- "Snowdin" -> "Straylight"
+[1] Iterating through links: 
+[1] --- "Snowdin" -> "Tambi"
+----------
+[2] Start
+[2] Current location: "Tambi"
+[2] Path so far: 
+[2] - "Faerun" -> "Norrath"
+[2] - "Norrath" -> "Snowdin"
+[2] - "Snowdin" -> "Tambi"
+[2] Available options: 
+[2] --- "Tambi" -> "Straylight"
+[2] Iterating through links: 
+[2] --- "Tambi" -> "Straylight"
+----------
+[3] Start
+[3] Current location: "Straylight"
+[3] Path so far: 
+[3] - "Faerun" -> "Norrath"
+[3] - "Norrath" -> "Snowdin"
+[3] - "Snowdin" -> "Tambi"
+[3] - "Tambi" -> "Straylight"
+[3] No travel options available: 
+No subpaths returned valid results
+[1] --- "Snowdin" -> "Straylight"
+----------
+[2] Start
+[2] Current location: "Straylight"
+[2] Path so far: 
+[2] - "Faerun" -> "Norrath"
+[2] - "Norrath" -> "Snowdin"
+[2] - "Snowdin" -> "Straylight"
+[2] No travel options available: 
+No subpaths returned valid results
+[0] --- "Norrath" -> "Tambi"
+----------
+[1] Start
+[1] Current location: "Tambi"
+[1] Path so far: 
+[1] - "Faerun" -> "Norrath"
+[1] - "Norrath" -> "Tambi"
+[1] Available options: 
+[1] --- "Tambi" -> "Straylight"
+[1] Iterating through links: 
+[1] --- "Tambi" -> "Straylight"
+----------
+[2] Start
+[2] Current location: "Straylight"
+[2] Path so far: 
+[2] - "Faerun" -> "Norrath"
+[2] - "Norrath" -> "Tambi"
+[2] - "Tambi" -> "Straylight"
+[2] No travel options available: 
+No subpaths returned valid results
+[0] --- "Norrath" -> "Straylight"
+----------
+[1] Start
+[1] Current location: "Straylight"
+[1] Path so far: 
+[1] - "Faerun" -> "Norrath"
+[1] - "Norrath" -> "Straylight"
+[1] No travel options available: 
+----------
+Tick 1
+----------
+[0] Start
+[0] Current location: "Tristram"
+[0] Path so far: 
+[0] - "Faerun" -> "Tristram"
+[0] Available options: 
+[0] --- "Tristram" -> "AlphaCentauri"
+[0] --- "Tristram" -> "Arbre"
+[0] --- "Tristram" -> "Snowdin"
+[0] --- "Tristram" -> "Tambi"
+[0] --- "Tristram" -> "Straylight"
+[0] Iterating through links: 
+[0] --- "Tristram" -> "AlphaCentauri"
+----------
+[1] Start
+[1] Current location: "AlphaCentauri"
+[1] Path so far: 
+[1] - "Faerun" -> "Tristram"
+[1] - "Tristram" -> "AlphaCentauri"
+[1] Available options: 
+[1] --- "AlphaCentauri" -> "Arbre"
+[1] --- "AlphaCentauri" -> "Snowdin"
+[1] --- "AlphaCentauri" -> "Tambi"
+[1] --- "AlphaCentauri" -> "Straylight"
+[1] Iterating through links: 
+[1] --- "AlphaCentauri" -> "Arbre"
+----------
+[2] Start
+[2] Current location: "Arbre"
+[2] Path so far: 
+[2] - "Faerun" -> "Tristram"
+[2] - "Tristram" -> "AlphaCentauri"
+[2] - "AlphaCentauri" -> "Arbre"
+[2] Available options: 
+[2] --- "Arbre" -> "Snowdin"
+[2] --- "Arbre" -> "Tambi"
+[2] --- "Arbre" -> "Straylight"
+[2] Iterating through links: 
+[2] --- "Arbre" -> "Snowdin"
+----------
+[3] Start
+[3] Current location: "Snowdin"
+[3] Path so far: 
+[3] - "Faerun" -> "Tristram"
+[3] - "Tristram" -> "AlphaCentauri"
+[3] - "AlphaCentauri" -> "Arbre"
+[3] - "Arbre" -> "Snowdin"
+[3] Available options: 
+[3] --- "Snowdin" -> "Tambi"
+[3] --- "Snowdin" -> "Straylight"
+[3] Iterating through links: 
+[3] --- "Snowdin" -> "Tambi"
+----------
+[4] Start
+[4] Current location: "Tambi"
+[4] Path so far: 
+[4] - "Faerun" -> "Tristram"
+[4] - "Tristram" -> "AlphaCentauri"
+[4] - "AlphaCentauri" -> "Arbre"
+[4] - "Arbre" -> "Snowdin"
+[4] - "Snowdin" -> "Tambi"
+[4] Available options: 
+[4] --- "Tambi" -> "Straylight"
+[4] Iterating through links: 
+[4] --- "Tambi" -> "Straylight"
+----------
+[5] Start
+[5] Current location: "Straylight"
+[5] Path so far: 
+[5] - "Faerun" -> "Tristram"
+[5] - "Tristram" -> "AlphaCentauri"
+[5] - "AlphaCentauri" -> "Arbre"
+[5] - "Arbre" -> "Snowdin"
+[5] - "Snowdin" -> "Tambi"
+[5] - "Tambi" -> "Straylight"
+[5] No travel options available: 
+No subpaths returned valid results
+[3] --- "Snowdin" -> "Straylight"
+----------
+[4] Start
+[4] Current location: "Straylight"
+[4] Path so far: 
+[4] - "Faerun" -> "Tristram"
+[4] - "Tristram" -> "AlphaCentauri"
+[4] - "AlphaCentauri" -> "Arbre"
+[4] - "Arbre" -> "Snowdin"
+[4] - "Snowdin" -> "Straylight"
+[4] No travel options available: 
+No subpaths returned valid results
+[2] --- "Arbre" -> "Tambi"
+----------
+[3] Start
+[3] Current location: "Tambi"
+[3] Path so far: 
+[3] - "Faerun" -> "Tristram"
+[3] - "Tristram" -> "AlphaCentauri"
+[3] - "AlphaCentauri" -> "Arbre"
+[3] - "Arbre" -> "Tambi"
+[3] Available options: 
+[3] --- "Tambi" -> "Straylight"
+[3] Iterating through links: 
+[3] --- "Tambi" -> "Straylight"
+----------
+[4] Start
+[4] Current location: "Straylight"
+[4] Path so far: 
+[4] - "Faerun" -> "Tristram"
+[4] - "Tristram" -> "AlphaCentauri"
+[4] - "AlphaCentauri" -> "Arbre"
+[4] - "Arbre" -> "Tambi"
+[4] - "Tambi" -> "Straylight"
+[4] No travel options available: 
+No subpaths returned valid results
+[2] --- "Arbre" -> "Straylight"
+----------
+[3] Start
+[3] Current location: "Straylight"
+[3] Path so far: 
+[3] - "Faerun" -> "Tristram"
+[3] - "Tristram" -> "AlphaCentauri"
+[3] - "AlphaCentauri" -> "Arbre"
+[3] - "Arbre" -> "Straylight"
+[3] No travel options available: 
+No subpaths returned valid results
+[1] --- "AlphaCentauri" -> "Snowdin"
+----------
+[2] Start
+[2] Current location: "Snowdin"
+[2] Path so far: 
+[2] - "Faerun" -> "Tristram"
+[2] - "Tristram" -> "AlphaCentauri"
+[2] - "AlphaCentauri" -> "Snowdin"
+[2] Available options: 
+[2] --- "Snowdin" -> "Tambi"
+[2] --- "Snowdin" -> "Straylight"
+[2] Iterating through links: 
+[2] --- "Snowdin" -> "Tambi"
+----------
+[3] Start
+[3] Current location: "Tambi"
+[3] Path so far: 
+[3] - "Faerun" -> "Tristram"
+[3] - "Tristram" -> "AlphaCentauri"
+[3] - "AlphaCentauri" -> "Snowdin"
+[3] - "Snowdin" -> "Tambi"
+[3] Available options: 
+[3] --- "Tambi" -> "Straylight"
+[3] Iterating through links: 
+[3] --- "Tambi" -> "Straylight"
+----------
+[4] Start
+[4] Current location: "Straylight"
+[4] Path so far: 
+[4] - "Faerun" -> "Tristram"
+[4] - "Tristram" -> "AlphaCentauri"
+[4] - "AlphaCentauri" -> "Snowdin"
+[4] - "Snowdin" -> "Tambi"
+[4] - "Tambi" -> "Straylight"
+[4] No travel options available: 
+No subpaths returned valid results
+[2] --- "Snowdin" -> "Straylight"
+----------
+[3] Start
+[3] Current location: "Straylight"
+[3] Path so far: 
+[3] - "Faerun" -> "Tristram"
+[3] - "Tristram" -> "AlphaCentauri"
+[3] - "AlphaCentauri" -> "Snowdin"
+[3] - "Snowdin" -> "Straylight"
+[3] No travel options available: 
+No subpaths returned valid results
+[1] --- "AlphaCentauri" -> "Tambi"
+----------
+[2] Start
+[2] Current location: "Tambi"
+[2] Path so far: 
+[2] - "Faerun" -> "Tristram"
+[2] - "Tristram" -> "AlphaCentauri"
+[2] - "AlphaCentauri" -> "Tambi"
+[2] Available options: 
+[2] --- "Tambi" -> "Straylight"
+[2] Iterating through links: 
+[2] --- "Tambi" -> "Straylight"
+----------
+[3] Start
+[3] Current location: "Straylight"
+[3] Path so far: 
+[3] - "Faerun" -> "Tristram"
+[3] - "Tristram" -> "AlphaCentauri"
+[3] - "AlphaCentauri" -> "Tambi"
+[3] - "Tambi" -> "Straylight"
+[3] No travel options available: 
+No subpaths returned valid results
+[1] --- "AlphaCentauri" -> "Straylight"
+----------
+[2] Start
+[2] Current location: "Straylight"
+[2] Path so far: 
+[2] - "Faerun" -> "Tristram"
+[2] - "Tristram" -> "AlphaCentauri"
+[2] - "AlphaCentauri" -> "Straylight"
+[2] No travel options available: 
+No subpaths returned valid results
+[0] --- "Tristram" -> "Arbre"
+----------
+[1] Start
+[1] Current location: "Arbre"
+[1] Path so far: 
+[1] - "Faerun" -> "Tristram"
+[1] - "Tristram" -> "Arbre"
+[1] Available options: 
+[1] --- "Arbre" -> "Snowdin"
+[1] --- "Arbre" -> "Tambi"
+[1] --- "Arbre" -> "Straylight"
+[1] Iterating through links: 
+[1] --- "Arbre" -> "Snowdin"
+----------
+[2] Start
+[2] Current location: "Snowdin"
+[2] Path so far: 
+[2] - "Faerun" -> "Tristram"
+[2] - "Tristram" -> "Arbre"
+[2] - "Arbre" -> "Snowdin"
+[2] Available options: 
+[2] --- "Snowdin" -> "Tambi"
+[2] --- "Snowdin" -> "Straylight"
+[2] Iterating through links: 
+[2] --- "Snowdin" -> "Tambi"
+----------
+[3] Start
+[3] Current location: "Tambi"
+[3] Path so far: 
+[3] - "Faerun" -> "Tristram"
+[3] - "Tristram" -> "Arbre"
+[3] - "Arbre" -> "Snowdin"
+[3] - "Snowdin" -> "Tambi"
+[3] Available options: 
+[3] --- "Tambi" -> "Straylight"
+[3] Iterating through links: 
+[3] --- "Tambi" -> "Straylight"
+----------
+[4] Start
+[4] Current location: "Straylight"
+[4] Path so far: 
+[4] - "Faerun" -> "Tristram"
+[4] - "Tristram" -> "Arbre"
+[4] - "Arbre" -> "Snowdin"
+[4] - "Snowdin" -> "Tambi"
+[4] - "Tambi" -> "Straylight"
+[4] No travel options available: 
+No subpaths returned valid results
+[2] --- "Snowdin" -> "Straylight"
+----------
+[3] Start
+[3] Current location: "Straylight"
+[3] Path so far: 
+[3] - "Faerun" -> "Tristram"
+[3] - "Tristram" -> "Arbre"
+[3] - "Arbre" -> "Snowdin"
+[3] - "Snowdin" -> "Straylight"
+[3] No travel options available: 
+No subpaths returned valid results
+[1] --- "Arbre" -> "Tambi"
+----------
+[2] Start
+[2] Current location: "Tambi"
+[2] Path so far: 
+[2] - "Faerun" -> "Tristram"
+[2] - "Tristram" -> "Arbre"
+[2] - "Arbre" -> "Tambi"
+[2] Available options: 
+[2] --- "Tambi" -> "Straylight"
+[2] Iterating through links: 
+[2] --- "Tambi" -> "Straylight"
+----------
+[3] Start
+[3] Current location: "Straylight"
+[3] Path so far: 
+[3] - "Faerun" -> "Tristram"
+[3] - "Tristram" -> "Arbre"
+[3] - "Arbre" -> "Tambi"
+[3] - "Tambi" -> "Straylight"
+[3] No travel options available: 
+No subpaths returned valid results
+[1] --- "Arbre" -> "Straylight"
+----------
+[2] Start
+[2] Current location: "Straylight"
+[2] Path so far: 
+[2] - "Faerun" -> "Tristram"
+[2] - "Tristram" -> "Arbre"
+[2] - "Arbre" -> "Straylight"
+[2] No travel options available: 
+No subpaths returned valid results
+[0] --- "Tristram" -> "Snowdin"
+----------
+[1] Start
+[1] Current location: "Snowdin"
+[1] Path so far: 
+[1] - "Faerun" -> "Tristram"
+[1] - "Tristram" -> "Snowdin"
+[1] Available options: 
+[1] --- "Snowdin" -> "Tambi"
+[1] --- "Snowdin" -> "Straylight"
+[1] Iterating through links: 
+[1] --- "Snowdin" -> "Tambi"
+----------
+[2] Start
+[2] Current location: "Tambi"
+[2] Path so far: 
+[2] - "Faerun" -> "Tristram"
+[2] - "Tristram" -> "Snowdin"
+[2] - "Snowdin" -> "Tambi"
+[2] Available options: 
+[2] --- "Tambi" -> "Straylight"
+[2] Iterating through links: 
+[2] --- "Tambi" -> "Straylight"
+----------
+[3] Start
+[3] Current location: "Straylight"
+[3] Path so far: 
+[3] - "Faerun" -> "Tristram"
+[3] - "Tristram" -> "Snowdin"
+[3] - "Snowdin" -> "Tambi"
+[3] - "Tambi" -> "Straylight"
+[3] No travel options available: 
+No subpaths returned valid results
+[1] --- "Snowdin" -> "Straylight"
+----------
+[2] Start
+[2] Current location: "Straylight"
+[2] Path so far: 
+[2] - "Faerun" -> "Tristram"
+[2] - "Tristram" -> "Snowdin"
+[2] - "Snowdin" -> "Straylight"
+[2] No travel options available: 
+No subpaths returned valid results
+[0] --- "Tristram" -> "Tambi"
+----------
+[1] Start
+[1] Current location: "Tambi"
+[1] Path so far: 
+[1] - "Faerun" -> "Tristram"
+[1] - "Tristram" -> "Tambi"
+[1] Available options: 
+[1] --- "Tambi" -> "Straylight"
+[1] Iterating through links: 
+[1] --- "Tambi" -> "Straylight"
+----------
+[2] Start
+[2] Current location: "Straylight"
+[2] Path so far: 
+[2] - "Faerun" -> "Tristram"
+[2] - "Tristram" -> "Tambi"
+[2] - "Tambi" -> "Straylight"
+[2] No travel options available: 
+No subpaths returned valid results
+[0] --- "Tristram" -> "Straylight"
+----------
+[1] Start
+[1] Current location: "Straylight"
+[1] Path so far: 
+[1] - "Faerun" -> "Tristram"
+[1] - "Tristram" -> "Straylight"
+[1] No travel options available: 
+No subpaths returned valid results
+----------
+Tick 2
+----------
+[0] Start
+[0] Current location: "AlphaCentauri"
+[0] Path so far: 
+[0] - "Faerun" -> "AlphaCentauri"
+[0] Available options: 
+[0] --- "AlphaCentauri" -> "Arbre"
+[0] --- "AlphaCentauri" -> "Snowdin"
+[0] --- "AlphaCentauri" -> "Tambi"
+[0] --- "AlphaCentauri" -> "Straylight"
+[0] Iterating through links: 
+[0] --- "AlphaCentauri" -> "Arbre"
+----------
+[1] Start
+[1] Current location: "Arbre"
+[1] Path so far: 
+[1] - "Faerun" -> "AlphaCentauri"
+[1] - "AlphaCentauri" -> "Arbre"
+[1] Available options: 
+[1] --- "Arbre" -> "Snowdin"
+[1] --- "Arbre" -> "Tambi"
+[1] --- "Arbre" -> "Straylight"
+[1] Iterating through links: 
+[1] --- "Arbre" -> "Snowdin"
+----------
+[2] Start
+[2] Current location: "Snowdin"
+[2] Path so far: 
+[2] - "Faerun" -> "AlphaCentauri"
+[2] - "AlphaCentauri" -> "Arbre"
+[2] - "Arbre" -> "Snowdin"
+[2] Available options: 
+[2] --- "Snowdin" -> "Tambi"
+[2] --- "Snowdin" -> "Straylight"
+[2] Iterating through links: 
+[2] --- "Snowdin" -> "Tambi"
+----------
+[3] Start
+[3] Current location: "Tambi"
+[3] Path so far: 
+[3] - "Faerun" -> "AlphaCentauri"
+[3] - "AlphaCentauri" -> "Arbre"
+[3] - "Arbre" -> "Snowdin"
+[3] - "Snowdin" -> "Tambi"
+[3] Available options: 
+[3] --- "Tambi" -> "Straylight"
+[3] Iterating through links: 
+[3] --- "Tambi" -> "Straylight"
+----------
+[4] Start
+[4] Current location: "Straylight"
+[4] Path so far: 
+[4] - "Faerun" -> "AlphaCentauri"
+[4] - "AlphaCentauri" -> "Arbre"
+[4] - "Arbre" -> "Snowdin"
+[4] - "Snowdin" -> "Tambi"
+[4] - "Tambi" -> "Straylight"
+[4] No travel options available: 
+No subpaths returned valid results
+[2] --- "Snowdin" -> "Straylight"
+----------
+[3] Start
+[3] Current location: "Straylight"
+[3] Path so far: 
+[3] - "Faerun" -> "AlphaCentauri"
+[3] - "AlphaCentauri" -> "Arbre"
+[3] - "Arbre" -> "Snowdin"
+[3] - "Snowdin" -> "Straylight"
+[3] No travel options available: 
+No subpaths returned valid results
+[1] --- "Arbre" -> "Tambi"
+----------
+[2] Start
+[2] Current location: "Tambi"
+[2] Path so far: 
+[2] - "Faerun" -> "AlphaCentauri"
+[2] - "AlphaCentauri" -> "Arbre"
+[2] - "Arbre" -> "Tambi"
+[2] Available options: 
+[2] --- "Tambi" -> "Straylight"
+[2] Iterating through links: 
+[2] --- "Tambi" -> "Straylight"
+----------
+[3] Start
+[3] Current location: "Straylight"
+[3] Path so far: 
+[3] - "Faerun" -> "AlphaCentauri"
+[3] - "AlphaCentauri" -> "Arbre"
+[3] - "Arbre" -> "Tambi"
+[3] - "Tambi" -> "Straylight"
+[3] No travel options available: 
+No subpaths returned valid results
+[1] --- "Arbre" -> "Straylight"
+----------
+[2] Start
+[2] Current location: "Straylight"
+[2] Path so far: 
+[2] - "Faerun" -> "AlphaCentauri"
+[2] - "AlphaCentauri" -> "Arbre"
+[2] - "Arbre" -> "Straylight"
+[2] No travel options available: 
+No subpaths returned valid results
+[0] --- "AlphaCentauri" -> "Snowdin"
+----------
+[1] Start
+[1] Current location: "Snowdin"
+[1] Path so far: 
+[1] - "Faerun" -> "AlphaCentauri"
+[1] - "AlphaCentauri" -> "Snowdin"
+[1] Available options: 
+[1] --- "Snowdin" -> "Tambi"
+[1] --- "Snowdin" -> "Straylight"
+[1] Iterating through links: 
+[1] --- "Snowdin" -> "Tambi"
+----------
+[2] Start
+[2] Current location: "Tambi"
+[2] Path so far: 
+[2] - "Faerun" -> "AlphaCentauri"
+[2] - "AlphaCentauri" -> "Snowdin"
+[2] - "Snowdin" -> "Tambi"
+[2] Available options: 
+[2] --- "Tambi" -> "Straylight"
+[2] Iterating through links: 
+[2] --- "Tambi" -> "Straylight"
+----------
+[3] Start
+[3] Current location: "Straylight"
+[3] Path so far: 
+[3] - "Faerun" -> "AlphaCentauri"
+[3] - "AlphaCentauri" -> "Snowdin"
+[3] - "Snowdin" -> "Tambi"
+[3] - "Tambi" -> "Straylight"
+[3] No travel options available: 
+No subpaths returned valid results
+[1] --- "Snowdin" -> "Straylight"
+----------
+[2] Start
+[2] Current location: "Straylight"
+[2] Path so far: 
+[2] - "Faerun" -> "AlphaCentauri"
+[2] - "AlphaCentauri" -> "Snowdin"
+[2] - "Snowdin" -> "Straylight"
+[2] No travel options available: 
+No subpaths returned valid results
+[0] --- "AlphaCentauri" -> "Tambi"
+----------
+[1] Start
+[1] Current location: "Tambi"
+[1] Path so far: 
+[1] - "Faerun" -> "AlphaCentauri"
+[1] - "AlphaCentauri" -> "Tambi"
+[1] Available options: 
+[1] --- "Tambi" -> "Straylight"
+[1] Iterating through links: 
+[1] --- "Tambi" -> "Straylight"
+----------
+[2] Start
+[2] Current location: "Straylight"
+[2] Path so far: 
+[2] - "Faerun" -> "AlphaCentauri"
+[2] - "AlphaCentauri" -> "Tambi"
+[2] - "Tambi" -> "Straylight"
+[2] No travel options available: 
+No subpaths returned valid results
+[0] --- "AlphaCentauri" -> "Straylight"
+----------
+[1] Start
+[1] Current location: "Straylight"
+[1] Path so far: 
+[1] - "Faerun" -> "AlphaCentauri"
+[1] - "AlphaCentauri" -> "Straylight"
+[1] No travel options available: 
+No subpaths returned valid results
+----------
+Tick 3
+----------
+[0] Start
+[0] Current location: "Arbre"
+[0] Path so far: 
+[0] - "Faerun" -> "Arbre"
+[0] Available options: 
+[0] --- "Arbre" -> "Snowdin"
+[0] --- "Arbre" -> "Tambi"
+[0] --- "Arbre" -> "Straylight"
+[0] Iterating through links: 
+[0] --- "Arbre" -> "Snowdin"
+----------
+[1] Start
+[1] Current location: "Snowdin"
+[1] Path so far: 
+[1] - "Faerun" -> "Arbre"
+[1] - "Arbre" -> "Snowdin"
+[1] Available options: 
+[1] --- "Snowdin" -> "Tambi"
+[1] --- "Snowdin" -> "Straylight"
+[1] Iterating through links: 
+[1] --- "Snowdin" -> "Tambi"
+----------
+[2] Start
+[2] Current location: "Tambi"
+[2] Path so far: 
+[2] - "Faerun" -> "Arbre"
+[2] - "Arbre" -> "Snowdin"
+[2] - "Snowdin" -> "Tambi"
+[2] Available options: 
+[2] --- "Tambi" -> "Straylight"
+[2] Iterating through links: 
+[2] --- "Tambi" -> "Straylight"
+----------
+[3] Start
+[3] Current location: "Straylight"
+[3] Path so far: 
+[3] - "Faerun" -> "Arbre"
+[3] - "Arbre" -> "Snowdin"
+[3] - "Snowdin" -> "Tambi"
+[3] - "Tambi" -> "Straylight"
+[3] No travel options available: 
+No subpaths returned valid results
+[1] --- "Snowdin" -> "Straylight"
+----------
+[2] Start
+[2] Current location: "Straylight"
+[2] Path so far: 
+[2] - "Faerun" -> "Arbre"
+[2] - "Arbre" -> "Snowdin"
+[2] - "Snowdin" -> "Straylight"
+[2] No travel options available: 
+No subpaths returned valid results
+[0] --- "Arbre" -> "Tambi"
+----------
+[1] Start
+[1] Current location: "Tambi"
+[1] Path so far: 
+[1] - "Faerun" -> "Arbre"
+[1] - "Arbre" -> "Tambi"
+[1] Available options: 
+[1] --- "Tambi" -> "Straylight"
+[1] Iterating through links: 
+[1] --- "Tambi" -> "Straylight"
+----------
+[2] Start
+[2] Current location: "Straylight"
+[2] Path so far: 
+[2] - "Faerun" -> "Arbre"
+[2] - "Arbre" -> "Tambi"
+[2] - "Tambi" -> "Straylight"
+[2] No travel options available: 
+No subpaths returned valid results
+[0] --- "Arbre" -> "Straylight"
+----------
+[1] Start
+[1] Current location: "Straylight"
+[1] Path so far: 
+[1] - "Faerun" -> "Arbre"
+[1] - "Arbre" -> "Straylight"
+[1] No travel options available: 
+No subpaths returned valid results
+----------
+Tick 4
+----------
+[0] Start
+[0] Current location: "Snowdin"
+[0] Path so far: 
+[0] - "Faerun" -> "Snowdin"
+[0] Available options: 
+[0] --- "Snowdin" -> "Tambi"
+[0] --- "Snowdin" -> "Straylight"
+[0] Iterating through links: 
+[0] --- "Snowdin" -> "Tambi"
+----------
+[1] Start
+[1] Current location: "Tambi"
+[1] Path so far: 
+[1] - "Faerun" -> "Snowdin"
+[1] - "Snowdin" -> "Tambi"
+[1] Available options: 
+[1] --- "Tambi" -> "Straylight"
+[1] Iterating through links: 
+[1] --- "Tambi" -> "Straylight"
+----------
+[2] Start
+[2] Current location: "Straylight"
+[2] Path so far: 
+[2] - "Faerun" -> "Snowdin"
+[2] - "Snowdin" -> "Tambi"
+[2] - "Tambi" -> "Straylight"
+[2] No travel options available: 
+No subpaths returned valid results
+[0] --- "Snowdin" -> "Straylight"
+----------
+[1] Start
+[1] Current location: "Straylight"
+[1] Path so far: 
+[1] - "Faerun" -> "Snowdin"
+[1] - "Snowdin" -> "Straylight"
+[1] No travel options available: 
+No subpaths returned valid results
+----------
+Tick 5
+----------
+[0] Start
+[0] Current location: "Tambi"
+[0] Path so far: 
+[0] - "Faerun" -> "Tambi"
+[0] Available options: 
+[0] --- "Tambi" -> "Straylight"
+[0] Iterating through links: 
+[0] --- "Tambi" -> "Straylight"
+----------
+[1] Start
+[1] Current location: "Straylight"
+[1] Path so far: 
+[1] - "Faerun" -> "Tambi"
+[1] - "Tambi" -> "Straylight"
+[1] No travel options available: 
+No subpaths returned valid results
+----------
+Tick 6
+----------
+[0] Start
+[0] Current location: "Straylight"
+[0] Path so far: 
+[0] - "Faerun" -> "Straylight"
+[0] No travel options available: 
+----------
+Tick 7
+----------
+[0] Start
+[0] Current location: "Tristram"
+[0] Path so far: 
+[0] - "Norrath" -> "Tristram"
+[0] Available options: 
+[0] --- "Tristram" -> "AlphaCentauri"
+[0] --- "Tristram" -> "Arbre"
+[0] --- "Tristram" -> "Snowdin"
+[0] --- "Tristram" -> "Tambi"
+[0] --- "Tristram" -> "Straylight"
+[0] Iterating through links: 
+[0] --- "Tristram" -> "AlphaCentauri"
+----------
+[1] Start
+[1] Current location: "AlphaCentauri"
+[1] Path so far: 
+[1] - "Norrath" -> "Tristram"
+[1] - "Tristram" -> "AlphaCentauri"
+[1] Available options: 
+[1] --- "AlphaCentauri" -> "Arbre"
+[1] --- "AlphaCentauri" -> "Snowdin"
+[1] --- "AlphaCentauri" -> "Tambi"
+[1] --- "AlphaCentauri" -> "Straylight"
+[1] Iterating through links: 
+[1] --- "AlphaCentauri" -> "Arbre"
+----------
+[2] Start
+[2] Current location: "Arbre"
+[2] Path so far: 
+[2] - "Norrath" -> "Tristram"
+[2] - "Tristram" -> "AlphaCentauri"
+[2] - "AlphaCentauri" -> "Arbre"
+[2] Available options: 
+[2] --- "Arbre" -> "Snowdin"
+[2] --- "Arbre" -> "Tambi"
+[2] --- "Arbre" -> "Straylight"
+[2] Iterating through links: 
+[2] --- "Arbre" -> "Snowdin"
+----------
+[3] Start
+[3] Current location: "Snowdin"
+[3] Path so far: 
+[3] - "Norrath" -> "Tristram"
+[3] - "Tristram" -> "AlphaCentauri"
+[3] - "AlphaCentauri" -> "Arbre"
+[3] - "Arbre" -> "Snowdin"
+[3] Available options: 
+[3] --- "Snowdin" -> "Tambi"
+[3] --- "Snowdin" -> "Straylight"
+[3] Iterating through links: 
+[3] --- "Snowdin" -> "Tambi"
+----------
+[4] Start
+[4] Current location: "Tambi"
+[4] Path so far: 
+[4] - "Norrath" -> "Tristram"
+[4] - "Tristram" -> "AlphaCentauri"
+[4] - "AlphaCentauri" -> "Arbre"
+[4] - "Arbre" -> "Snowdin"
+[4] - "Snowdin" -> "Tambi"
+[4] Available options: 
+[4] --- "Tambi" -> "Straylight"
+[4] Iterating through links: 
+[4] --- "Tambi" -> "Straylight"
+----------
+[5] Start
+[5] Current location: "Straylight"
+[5] Path so far: 
+[5] - "Norrath" -> "Tristram"
+[5] - "Tristram" -> "AlphaCentauri"
+[5] - "AlphaCentauri" -> "Arbre"
+[5] - "Arbre" -> "Snowdin"
+[5] - "Snowdin" -> "Tambi"
+[5] - "Tambi" -> "Straylight"
+[5] No travel options available: 
+No subpaths returned valid results
+[3] --- "Snowdin" -> "Straylight"
+----------
+[4] Start
+[4] Current location: "Straylight"
+[4] Path so far: 
+[4] - "Norrath" -> "Tristram"
+[4] - "Tristram" -> "AlphaCentauri"
+[4] - "AlphaCentauri" -> "Arbre"
+[4] - "Arbre" -> "Snowdin"
+[4] - "Snowdin" -> "Straylight"
+[4] No travel options available: 
+No subpaths returned valid results
+[2] --- "Arbre" -> "Tambi"
+----------
+[3] Start
+[3] Current location: "Tambi"
+[3] Path so far: 
+[3] - "Norrath" -> "Tristram"
+[3] - "Tristram" -> "AlphaCentauri"
+[3] - "AlphaCentauri" -> "Arbre"
+[3] - "Arbre" -> "Tambi"
+[3] Available options: 
+[3] --- "Tambi" -> "Straylight"
+[3] Iterating through links: 
+[3] --- "Tambi" -> "Straylight"
+----------
+[4] Start
+[4] Current location: "Straylight"
+[4] Path so far: 
+[4] - "Norrath" -> "Tristram"
+[4] - "Tristram" -> "AlphaCentauri"
+[4] - "AlphaCentauri" -> "Arbre"
+[4] - "Arbre" -> "Tambi"
+[4] - "Tambi" -> "Straylight"
+[4] No travel options available: 
+No subpaths returned valid results
+[2] --- "Arbre" -> "Straylight"
+----------
+[3] Start
+[3] Current location: "Straylight"
+[3] Path so far: 
+[3] - "Norrath" -> "Tristram"
+[3] - "Tristram" -> "AlphaCentauri"
+[3] - "AlphaCentauri" -> "Arbre"
+[3] - "Arbre" -> "Straylight"
+[3] No travel options available: 
+No subpaths returned valid results
+[1] --- "AlphaCentauri" -> "Snowdin"
+----------
+[2] Start
+[2] Current location: "Snowdin"
+[2] Path so far: 
+[2] - "Norrath" -> "Tristram"
+[2] - "Tristram" -> "AlphaCentauri"
+[2] - "AlphaCentauri" -> "Snowdin"
+[2] Available options: 
+[2] --- "Snowdin" -> "Tambi"
+[2] --- "Snowdin" -> "Straylight"
+[2] Iterating through links: 
+[2] --- "Snowdin" -> "Tambi"
+----------
+[3] Start
+[3] Current location: "Tambi"
+[3] Path so far: 
+[3] - "Norrath" -> "Tristram"
+[3] - "Tristram" -> "AlphaCentauri"
+[3] - "AlphaCentauri" -> "Snowdin"
+[3] - "Snowdin" -> "Tambi"
+[3] Available options: 
+[3] --- "Tambi" -> "Straylight"
+[3] Iterating through links: 
+[3] --- "Tambi" -> "Straylight"
+----------
+[4] Start
+[4] Current location: "Straylight"
+[4] Path so far: 
+[4] - "Norrath" -> "Tristram"
+[4] - "Tristram" -> "AlphaCentauri"
+[4] - "AlphaCentauri" -> "Snowdin"
+[4] - "Snowdin" -> "Tambi"
+[4] - "Tambi" -> "Straylight"
+[4] No travel options available: 
+No subpaths returned valid results
+[2] --- "Snowdin" -> "Straylight"
+----------
+[3] Start
+[3] Current location: "Straylight"
+[3] Path so far: 
+[3] - "Norrath" -> "Tristram"
+[3] - "Tristram" -> "AlphaCentauri"
+[3] - "AlphaCentauri" -> "Snowdin"
+[3] - "Snowdin" -> "Straylight"
+[3] No travel options available: 
+No subpaths returned valid results
+[1] --- "AlphaCentauri" -> "Tambi"
+----------
+[2] Start
+[2] Current location: "Tambi"
+[2] Path so far: 
+[2] - "Norrath" -> "Tristram"
+[2] - "Tristram" -> "AlphaCentauri"
+[2] - "AlphaCentauri" -> "Tambi"
+[2] Available options: 
+[2] --- "Tambi" -> "Straylight"
+[2] Iterating through links: 
+[2] --- "Tambi" -> "Straylight"
+----------
+[3] Start
+[3] Current location: "Straylight"
+[3] Path so far: 
+[3] - "Norrath" -> "Tristram"
+[3] - "Tristram" -> "AlphaCentauri"
+[3] - "AlphaCentauri" -> "Tambi"
+[3] - "Tambi" -> "Straylight"
+[3] No travel options available: 
+No subpaths returned valid results
+[1] --- "AlphaCentauri" -> "Straylight"
+----------
+[2] Start
+[2] Current location: "Straylight"
+[2] Path so far: 
+[2] - "Norrath" -> "Tristram"
+[2] - "Tristram" -> "AlphaCentauri"
+[2] - "AlphaCentauri" -> "Straylight"
+[2] No travel options available: 
+No subpaths returned valid results
+[0] --- "Tristram" -> "Arbre"
+----------
+[1] Start
+[1] Current location: "Arbre"
+[1] Path so far: 
+[1] - "Norrath" -> "Tristram"
+[1] - "Tristram" -> "Arbre"
+[1] Available options: 
+[1] --- "Arbre" -> "Snowdin"
+[1] --- "Arbre" -> "Tambi"
+[1] --- "Arbre" -> "Straylight"
+[1] Iterating through links: 
+[1] --- "Arbre" -> "Snowdin"
+----------
+[2] Start
+[2] Current location: "Snowdin"
+[2] Path so far: 
+[2] - "Norrath" -> "Tristram"
+[2] - "Tristram" -> "Arbre"
+[2] - "Arbre" -> "Snowdin"
+[2] Available options: 
+[2] --- "Snowdin" -> "Tambi"
+[2] --- "Snowdin" -> "Straylight"
+[2] Iterating through links: 
+[2] --- "Snowdin" -> "Tambi"
+----------
+[3] Start
+[3] Current location: "Tambi"
+[3] Path so far: 
+[3] - "Norrath" -> "Tristram"
+[3] - "Tristram" -> "Arbre"
+[3] - "Arbre" -> "Snowdin"
+[3] - "Snowdin" -> "Tambi"
+[3] Available options: 
+[3] --- "Tambi" -> "Straylight"
+[3] Iterating through links: 
+[3] --- "Tambi" -> "Straylight"
+----------
+[4] Start
+[4] Current location: "Straylight"
+[4] Path so far: 
+[4] - "Norrath" -> "Tristram"
+[4] - "Tristram" -> "Arbre"
+[4] - "Arbre" -> "Snowdin"
+[4] - "Snowdin" -> "Tambi"
+[4] - "Tambi" -> "Straylight"
+[4] No travel options available: 
+No subpaths returned valid results
+[2] --- "Snowdin" -> "Straylight"
+----------
+[3] Start
+[3] Current location: "Straylight"
+[3] Path so far: 
+[3] - "Norrath" -> "Tristram"
+[3] - "Tristram" -> "Arbre"
+[3] - "Arbre" -> "Snowdin"
+[3] - "Snowdin" -> "Straylight"
+[3] No travel options available: 
+No subpaths returned valid results
+[1] --- "Arbre" -> "Tambi"
+----------
+[2] Start
+[2] Current location: "Tambi"
+[2] Path so far: 
+[2] - "Norrath" -> "Tristram"
+[2] - "Tristram" -> "Arbre"
+[2] - "Arbre" -> "Tambi"
+[2] Available options: 
+[2] --- "Tambi" -> "Straylight"
+[2] Iterating through links: 
+[2] --- "Tambi" -> "Straylight"
+----------
+[3] Start
+[3] Current location: "Straylight"
+[3] Path so far: 
+[3] - "Norrath" -> "Tristram"
+[3] - "Tristram" -> "Arbre"
+[3] - "Arbre" -> "Tambi"
+[3] - "Tambi" -> "Straylight"
+[3] No travel options available: 
+No subpaths returned valid results
+[1] --- "Arbre" -> "Straylight"
+----------
+[2] Start
+[2] Current location: "Straylight"
+[2] Path so far: 
+[2] - "Norrath" -> "Tristram"
+[2] - "Tristram" -> "Arbre"
+[2] - "Arbre" -> "Straylight"
+[2] No travel options available: 
+No subpaths returned valid results
+[0] --- "Tristram" -> "Snowdin"
+----------
+[1] Start
+[1] Current location: "Snowdin"
+[1] Path so far: 
+[1] - "Norrath" -> "Tristram"
+[1] - "Tristram" -> "Snowdin"
+[1] Available options: 
+[1] --- "Snowdin" -> "Tambi"
+[1] --- "Snowdin" -> "Straylight"
+[1] Iterating through links: 
+[1] --- "Snowdin" -> "Tambi"
+----------
+[2] Start
+[2] Current location: "Tambi"
+[2] Path so far: 
+[2] - "Norrath" -> "Tristram"
+[2] - "Tristram" -> "Snowdin"
+[2] - "Snowdin" -> "Tambi"
+[2] Available options: 
+[2] --- "Tambi" -> "Straylight"
+[2] Iterating through links: 
+[2] --- "Tambi" -> "Straylight"
+----------
+[3] Start
+[3] Current location: "Straylight"
+[3] Path so far: 
+[3] - "Norrath" -> "Tristram"
+[3] - "Tristram" -> "Snowdin"
+[3] - "Snowdin" -> "Tambi"
+[3] - "Tambi" -> "Straylight"
+[3] No travel options available: 
+No subpaths returned valid results
+[1] --- "Snowdin" -> "Straylight"
+----------
+[2] Start
+[2] Current location: "Straylight"
+[2] Path so far: 
+[2] - "Norrath" -> "Tristram"
+[2] - "Tristram" -> "Snowdin"
+[2] - "Snowdin" -> "Straylight"
+[2] No travel options available: 
+No subpaths returned valid results
+[0] --- "Tristram" -> "Tambi"
+----------
+[1] Start
+[1] Current location: "Tambi"
+[1] Path so far: 
+[1] - "Norrath" -> "Tristram"
+[1] - "Tristram" -> "Tambi"
+[1] Available options: 
+[1] --- "Tambi" -> "Straylight"
+[1] Iterating through links: 
+[1] --- "Tambi" -> "Straylight"
+----------
+[2] Start
+[2] Current location: "Straylight"
+[2] Path so far: 
+[2] - "Norrath" -> "Tristram"
+[2] - "Tristram" -> "Tambi"
+[2] - "Tambi" -> "Straylight"
+[2] No travel options available: 
+No subpaths returned valid results
+[0] --- "Tristram" -> "Straylight"
+----------
+[1] Start
+[1] Current location: "Straylight"
+[1] Path so far: 
+[1] - "Norrath" -> "Tristram"
+[1] - "Tristram" -> "Straylight"
+[1] No travel options available: 
+No subpaths returned valid results
+----------
+Tick 8
+----------
+[0] Start
+[0] Current location: "AlphaCentauri"
+[0] Path so far: 
+[0] - "Norrath" -> "AlphaCentauri"
+[0] Available options: 
+[0] --- "AlphaCentauri" -> "Arbre"
+[0] --- "AlphaCentauri" -> "Snowdin"
+[0] --- "AlphaCentauri" -> "Tambi"
+[0] --- "AlphaCentauri" -> "Straylight"
+[0] Iterating through links: 
+[0] --- "AlphaCentauri" -> "Arbre"
+----------
+[1] Start
+[1] Current location: "Arbre"
+[1] Path so far: 
+[1] - "Norrath" -> "AlphaCentauri"
+[1] - "AlphaCentauri" -> "Arbre"
+[1] Available options: 
+[1] --- "Arbre" -> "Snowdin"
+[1] --- "Arbre" -> "Tambi"
+[1] --- "Arbre" -> "Straylight"
+[1] Iterating through links: 
+[1] --- "Arbre" -> "Snowdin"
+----------
+[2] Start
+[2] Current location: "Snowdin"
+[2] Path so far: 
+[2] - "Norrath" -> "AlphaCentauri"
+[2] - "AlphaCentauri" -> "Arbre"
+[2] - "Arbre" -> "Snowdin"
+[2] Available options: 
+[2] --- "Snowdin" -> "Tambi"
+[2] --- "Snowdin" -> "Straylight"
+[2] Iterating through links: 
+[2] --- "Snowdin" -> "Tambi"
+----------
+[3] Start
+[3] Current location: "Tambi"
+[3] Path so far: 
+[3] - "Norrath" -> "AlphaCentauri"
+[3] - "AlphaCentauri" -> "Arbre"
+[3] - "Arbre" -> "Snowdin"
+[3] - "Snowdin" -> "Tambi"
+[3] Available options: 
+[3] --- "Tambi" -> "Straylight"
+[3] Iterating through links: 
+[3] --- "Tambi" -> "Straylight"
+----------
+[4] Start
+[4] Current location: "Straylight"
+[4] Path so far: 
+[4] - "Norrath" -> "AlphaCentauri"
+[4] - "AlphaCentauri" -> "Arbre"
+[4] - "Arbre" -> "Snowdin"
+[4] - "Snowdin" -> "Tambi"
+[4] - "Tambi" -> "Straylight"
+[4] No travel options available: 
+No subpaths returned valid results
+[2] --- "Snowdin" -> "Straylight"
+----------
+[3] Start
+[3] Current location: "Straylight"
+[3] Path so far: 
+[3] - "Norrath" -> "AlphaCentauri"
+[3] - "AlphaCentauri" -> "Arbre"
+[3] - "Arbre" -> "Snowdin"
+[3] - "Snowdin" -> "Straylight"
+[3] No travel options available: 
+No subpaths returned valid results
+[1] --- "Arbre" -> "Tambi"
+----------
+[2] Start
+[2] Current location: "Tambi"
+[2] Path so far: 
+[2] - "Norrath" -> "AlphaCentauri"
+[2] - "AlphaCentauri" -> "Arbre"
+[2] - "Arbre" -> "Tambi"
+[2] Available options: 
+[2] --- "Tambi" -> "Straylight"
+[2] Iterating through links: 
+[2] --- "Tambi" -> "Straylight"
+----------
+[3] Start
+[3] Current location: "Straylight"
+[3] Path so far: 
+[3] - "Norrath" -> "AlphaCentauri"
+[3] - "AlphaCentauri" -> "Arbre"
+[3] - "Arbre" -> "Tambi"
+[3] - "Tambi" -> "Straylight"
+[3] No travel options available: 
+No subpaths returned valid results
+[1] --- "Arbre" -> "Straylight"
+----------
+[2] Start
+[2] Current location: "Straylight"
+[2] Path so far: 
+[2] - "Norrath" -> "AlphaCentauri"
+[2] - "AlphaCentauri" -> "Arbre"
+[2] - "Arbre" -> "Straylight"
+[2] No travel options available: 
+No subpaths returned valid results
+[0] --- "AlphaCentauri" -> "Snowdin"
+----------
+[1] Start
+[1] Current location: "Snowdin"
+[1] Path so far: 
+[1] - "Norrath" -> "AlphaCentauri"
+[1] - "AlphaCentauri" -> "Snowdin"
+[1] Available options: 
+[1] --- "Snowdin" -> "Tambi"
+[1] --- "Snowdin" -> "Straylight"
+[1] Iterating through links: 
+[1] --- "Snowdin" -> "Tambi"
+----------
+[2] Start
+[2] Current location: "Tambi"
+[2] Path so far: 
+[2] - "Norrath" -> "AlphaCentauri"
+[2] - "AlphaCentauri" -> "Snowdin"
+[2] - "Snowdin" -> "Tambi"
+[2] Available options: 
+[2] --- "Tambi" -> "Straylight"
+[2] Iterating through links: 
+[2] --- "Tambi" -> "Straylight"
+----------
+[3] Start
+[3] Current location: "Straylight"
+[3] Path so far: 
+[3] - "Norrath" -> "AlphaCentauri"
+[3] - "AlphaCentauri" -> "Snowdin"
+[3] - "Snowdin" -> "Tambi"
+[3] - "Tambi" -> "Straylight"
+[3] No travel options available: 
+No subpaths returned valid results
+[1] --- "Snowdin" -> "Straylight"
+----------
+[2] Start
+[2] Current location: "Straylight"
+[2] Path so far: 
+[2] - "Norrath" -> "AlphaCentauri"
+[2] - "AlphaCentauri" -> "Snowdin"
+[2] - "Snowdin" -> "Straylight"
+[2] No travel options available: 
+No subpaths returned valid results
+[0] --- "AlphaCentauri" -> "Tambi"
+----------
+[1] Start
+[1] Current location: "Tambi"
+[1] Path so far: 
+[1] - "Norrath" -> "AlphaCentauri"
+[1] - "AlphaCentauri" -> "Tambi"
+[1] Available options: 
+[1] --- "Tambi" -> "Straylight"
+[1] Iterating through links: 
+[1] --- "Tambi" -> "Straylight"
+----------
+[2] Start
+[2] Current location: "Straylight"
+[2] Path so far: 
+[2] - "Norrath" -> "AlphaCentauri"
+[2] - "AlphaCentauri" -> "Tambi"
+[2] - "Tambi" -> "Straylight"
+[2] No travel options available: 
+No subpaths returned valid results
+[0] --- "AlphaCentauri" -> "Straylight"
+----------
+[1] Start
+[1] Current location: "Straylight"
+[1] Path so far: 
+[1] - "Norrath" -> "AlphaCentauri"
+[1] - "AlphaCentauri" -> "Straylight"
+[1] No travel options available: 
+No subpaths returned valid results
+----------
+Tick 9
+----------
+[0] Start
+[0] Current location: "Arbre"
+[0] Path so far: 
+[0] - "Norrath" -> "Arbre"
+[0] Available options: 
+[0] --- "Arbre" -> "Snowdin"
+[0] --- "Arbre" -> "Tambi"
+[0] --- "Arbre" -> "Straylight"
+[0] Iterating through links: 
+[0] --- "Arbre" -> "Snowdin"
+----------
+[1] Start
+[1] Current location: "Snowdin"
+[1] Path so far: 
+[1] - "Norrath" -> "Arbre"
+[1] - "Arbre" -> "Snowdin"
+[1] Available options: 
+[1] --- "Snowdin" -> "Tambi"
+[1] --- "Snowdin" -> "Straylight"
+[1] Iterating through links: 
+[1] --- "Snowdin" -> "Tambi"
+----------
+[2] Start
+[2] Current location: "Tambi"
+[2] Path so far: 
+[2] - "Norrath" -> "Arbre"
+[2] - "Arbre" -> "Snowdin"
+[2] - "Snowdin" -> "Tambi"
+[2] Available options: 
+[2] --- "Tambi" -> "Straylight"
+[2] Iterating through links: 
+[2] --- "Tambi" -> "Straylight"
+----------
+[3] Start
+[3] Current location: "Straylight"
+[3] Path so far: 
+[3] - "Norrath" -> "Arbre"
+[3] - "Arbre" -> "Snowdin"
+[3] - "Snowdin" -> "Tambi"
+[3] - "Tambi" -> "Straylight"
+[3] No travel options available: 
+No subpaths returned valid results
+[1] --- "Snowdin" -> "Straylight"
+----------
+[2] Start
+[2] Current location: "Straylight"
+[2] Path so far: 
+[2] - "Norrath" -> "Arbre"
+[2] - "Arbre" -> "Snowdin"
+[2] - "Snowdin" -> "Straylight"
+[2] No travel options available: 
+No subpaths returned valid results
+[0] --- "Arbre" -> "Tambi"
+----------
+[1] Start
+[1] Current location: "Tambi"
+[1] Path so far: 
+[1] - "Norrath" -> "Arbre"
+[1] - "Arbre" -> "Tambi"
+[1] Available options: 
+[1] --- "Tambi" -> "Straylight"
+[1] Iterating through links: 
+[1] --- "Tambi" -> "Straylight"
+----------
+[2] Start
+[2] Current location: "Straylight"
+[2] Path so far: 
+[2] - "Norrath" -> "Arbre"
+[2] - "Arbre" -> "Tambi"
+[2] - "Tambi" -> "Straylight"
+[2] No travel options available: 
+No subpaths returned valid results
+[0] --- "Arbre" -> "Straylight"
+----------
+[1] Start
+[1] Current location: "Straylight"
+[1] Path so far: 
+[1] - "Norrath" -> "Arbre"
+[1] - "Arbre" -> "Straylight"
+[1] No travel options available: 
+No subpaths returned valid results
+----------
+Tick 10
+----------
+[0] Start
+[0] Current location: "Snowdin"
+[0] Path so far: 
+[0] - "Norrath" -> "Snowdin"
+[0] Available options: 
+[0] --- "Snowdin" -> "Tambi"
+[0] --- "Snowdin" -> "Straylight"
+[0] Iterating through links: 
+[0] --- "Snowdin" -> "Tambi"
+----------
+[1] Start
+[1] Current location: "Tambi"
+[1] Path so far: 
+[1] - "Norrath" -> "Snowdin"
+[1] - "Snowdin" -> "Tambi"
+[1] Available options: 
+[1] --- "Tambi" -> "Straylight"
+[1] Iterating through links: 
+[1] --- "Tambi" -> "Straylight"
+----------
+[2] Start
+[2] Current location: "Straylight"
+[2] Path so far: 
+[2] - "Norrath" -> "Snowdin"
+[2] - "Snowdin" -> "Tambi"
+[2] - "Tambi" -> "Straylight"
+[2] No travel options available: 
+No subpaths returned valid results
+[0] --- "Snowdin" -> "Straylight"
+----------
+[1] Start
+[1] Current location: "Straylight"
+[1] Path so far: 
+[1] - "Norrath" -> "Snowdin"
+[1] - "Snowdin" -> "Straylight"
+[1] No travel options available: 
+No subpaths returned valid results
+----------
+Tick 11
+----------
+[0] Start
+[0] Current location: "Tambi"
+[0] Path so far: 
+[0] - "Norrath" -> "Tambi"
+[0] Available options: 
+[0] --- "Tambi" -> "Straylight"
+[0] Iterating through links: 
+[0] --- "Tambi" -> "Straylight"
+----------
+[1] Start
+[1] Current location: "Straylight"
+[1] Path so far: 
+[1] - "Norrath" -> "Tambi"
+[1] - "Tambi" -> "Straylight"
+[1] No travel options available: 
+No subpaths returned valid results
+----------
+Tick 12
+----------
+[0] Start
+[0] Current location: "Straylight"
+[0] Path so far: 
+[0] - "Norrath" -> "Straylight"
+[0] No travel options available: 
+----------
+Tick 13
+----------
+[0] Start
+[0] Current location: "AlphaCentauri"
+[0] Path so far: 
+[0] - "Tristram" -> "AlphaCentauri"
+[0] Available options: 
+[0] --- "AlphaCentauri" -> "Arbre"
+[0] --- "AlphaCentauri" -> "Snowdin"
+[0] --- "AlphaCentauri" -> "Tambi"
+[0] --- "AlphaCentauri" -> "Straylight"
+[0] Iterating through links: 
+[0] --- "AlphaCentauri" -> "Arbre"
+----------
+[1] Start
+[1] Current location: "Arbre"
+[1] Path so far: 
+[1] - "Tristram" -> "AlphaCentauri"
+[1] - "AlphaCentauri" -> "Arbre"
+[1] Available options: 
+[1] --- "Arbre" -> "Snowdin"
+[1] --- "Arbre" -> "Tambi"
+[1] --- "Arbre" -> "Straylight"
+[1] Iterating through links: 
+[1] --- "Arbre" -> "Snowdin"
+----------
+[2] Start
+[2] Current location: "Snowdin"
+[2] Path so far: 
+[2] - "Tristram" -> "AlphaCentauri"
+[2] - "AlphaCentauri" -> "Arbre"
+[2] - "Arbre" -> "Snowdin"
+[2] Available options: 
+[2] --- "Snowdin" -> "Tambi"
+[2] --- "Snowdin" -> "Straylight"
+[2] Iterating through links: 
+[2] --- "Snowdin" -> "Tambi"
+----------
+[3] Start
+[3] Current location: "Tambi"
+[3] Path so far: 
+[3] - "Tristram" -> "AlphaCentauri"
+[3] - "AlphaCentauri" -> "Arbre"
+[3] - "Arbre" -> "Snowdin"
+[3] - "Snowdin" -> "Tambi"
+[3] Available options: 
+[3] --- "Tambi" -> "Straylight"
+[3] Iterating through links: 
+[3] --- "Tambi" -> "Straylight"
+----------
+[4] Start
+[4] Current location: "Straylight"
+[4] Path so far: 
+[4] - "Tristram" -> "AlphaCentauri"
+[4] - "AlphaCentauri" -> "Arbre"
+[4] - "Arbre" -> "Snowdin"
+[4] - "Snowdin" -> "Tambi"
+[4] - "Tambi" -> "Straylight"
+[4] No travel options available: 
+No subpaths returned valid results
+[2] --- "Snowdin" -> "Straylight"
+----------
+[3] Start
+[3] Current location: "Straylight"
+[3] Path so far: 
+[3] - "Tristram" -> "AlphaCentauri"
+[3] - "AlphaCentauri" -> "Arbre"
+[3] - "Arbre" -> "Snowdin"
+[3] - "Snowdin" -> "Straylight"
+[3] No travel options available: 
+No subpaths returned valid results
+[1] --- "Arbre" -> "Tambi"
+----------
+[2] Start
+[2] Current location: "Tambi"
+[2] Path so far: 
+[2] - "Tristram" -> "AlphaCentauri"
+[2] - "AlphaCentauri" -> "Arbre"
+[2] - "Arbre" -> "Tambi"
+[2] Available options: 
+[2] --- "Tambi" -> "Straylight"
+[2] Iterating through links: 
+[2] --- "Tambi" -> "Straylight"
+----------
+[3] Start
+[3] Current location: "Straylight"
+[3] Path so far: 
+[3] - "Tristram" -> "AlphaCentauri"
+[3] - "AlphaCentauri" -> "Arbre"
+[3] - "Arbre" -> "Tambi"
+[3] - "Tambi" -> "Straylight"
+[3] No travel options available: 
+No subpaths returned valid results
+[1] --- "Arbre" -> "Straylight"
+----------
+[2] Start
+[2] Current location: "Straylight"
+[2] Path so far: 
+[2] - "Tristram" -> "AlphaCentauri"
+[2] - "AlphaCentauri" -> "Arbre"
+[2] - "Arbre" -> "Straylight"
+[2] No travel options available: 
+No subpaths returned valid results
+[0] --- "AlphaCentauri" -> "Snowdin"
+----------
+[1] Start
+[1] Current location: "Snowdin"
+[1] Path so far: 
+[1] - "Tristram" -> "AlphaCentauri"
+[1] - "AlphaCentauri" -> "Snowdin"
+[1] Available options: 
+[1] --- "Snowdin" -> "Tambi"
+[1] --- "Snowdin" -> "Straylight"
+[1] Iterating through links: 
+[1] --- "Snowdin" -> "Tambi"
+----------
+[2] Start
+[2] Current location: "Tambi"
+[2] Path so far: 
+[2] - "Tristram" -> "AlphaCentauri"
+[2] - "AlphaCentauri" -> "Snowdin"
+[2] - "Snowdin" -> "Tambi"
+[2] Available options: 
+[2] --- "Tambi" -> "Straylight"
+[2] Iterating through links: 
+[2] --- "Tambi" -> "Straylight"
+----------
+[3] Start
+[3] Current location: "Straylight"
+[3] Path so far: 
+[3] - "Tristram" -> "AlphaCentauri"
+[3] - "AlphaCentauri" -> "Snowdin"
+[3] - "Snowdin" -> "Tambi"
+[3] - "Tambi" -> "Straylight"
+[3] No travel options available: 
+No subpaths returned valid results
+[1] --- "Snowdin" -> "Straylight"
+----------
+[2] Start
+[2] Current location: "Straylight"
+[2] Path so far: 
+[2] - "Tristram" -> "AlphaCentauri"
+[2] - "AlphaCentauri" -> "Snowdin"
+[2] - "Snowdin" -> "Straylight"
+[2] No travel options available: 
+No subpaths returned valid results
+[0] --- "AlphaCentauri" -> "Tambi"
+----------
+[1] Start
+[1] Current location: "Tambi"
+[1] Path so far: 
+[1] - "Tristram" -> "AlphaCentauri"
+[1] - "AlphaCentauri" -> "Tambi"
+[1] Available options: 
+[1] --- "Tambi" -> "Straylight"
+[1] Iterating through links: 
+[1] --- "Tambi" -> "Straylight"
+----------
+[2] Start
+[2] Current location: "Straylight"
+[2] Path so far: 
+[2] - "Tristram" -> "AlphaCentauri"
+[2] - "AlphaCentauri" -> "Tambi"
+[2] - "Tambi" -> "Straylight"
+[2] No travel options available: 
+No subpaths returned valid results
+[0] --- "AlphaCentauri" -> "Straylight"
+----------
+[1] Start
+[1] Current location: "Straylight"
+[1] Path so far: 
+[1] - "Tristram" -> "AlphaCentauri"
+[1] - "AlphaCentauri" -> "Straylight"
+[1] No travel options available: 
+No subpaths returned valid results
+----------
+Tick 14
+----------
+[0] Start
+[0] Current location: "Arbre"
+[0] Path so far: 
+[0] - "Tristram" -> "Arbre"
+[0] Available options: 
+[0] --- "Arbre" -> "Snowdin"
+[0] --- "Arbre" -> "Tambi"
+[0] --- "Arbre" -> "Straylight"
+[0] Iterating through links: 
+[0] --- "Arbre" -> "Snowdin"
+----------
+[1] Start
+[1] Current location: "Snowdin"
+[1] Path so far: 
+[1] - "Tristram" -> "Arbre"
+[1] - "Arbre" -> "Snowdin"
+[1] Available options: 
+[1] --- "Snowdin" -> "Tambi"
+[1] --- "Snowdin" -> "Straylight"
+[1] Iterating through links: 
+[1] --- "Snowdin" -> "Tambi"
+----------
+[2] Start
+[2] Current location: "Tambi"
+[2] Path so far: 
+[2] - "Tristram" -> "Arbre"
+[2] - "Arbre" -> "Snowdin"
+[2] - "Snowdin" -> "Tambi"
+[2] Available options: 
+[2] --- "Tambi" -> "Straylight"
+[2] Iterating through links: 
+[2] --- "Tambi" -> "Straylight"
+----------
+[3] Start
+[3] Current location: "Straylight"
+[3] Path so far: 
+[3] - "Tristram" -> "Arbre"
+[3] - "Arbre" -> "Snowdin"
+[3] - "Snowdin" -> "Tambi"
+[3] - "Tambi" -> "Straylight"
+[3] No travel options available: 
+No subpaths returned valid results
+[1] --- "Snowdin" -> "Straylight"
+----------
+[2] Start
+[2] Current location: "Straylight"
+[2] Path so far: 
+[2] - "Tristram" -> "Arbre"
+[2] - "Arbre" -> "Snowdin"
+[2] - "Snowdin" -> "Straylight"
+[2] No travel options available: 
+No subpaths returned valid results
+[0] --- "Arbre" -> "Tambi"
+----------
+[1] Start
+[1] Current location: "Tambi"
+[1] Path so far: 
+[1] - "Tristram" -> "Arbre"
+[1] - "Arbre" -> "Tambi"
+[1] Available options: 
+[1] --- "Tambi" -> "Straylight"
+[1] Iterating through links: 
+[1] --- "Tambi" -> "Straylight"
+----------
+[2] Start
+[2] Current location: "Straylight"
+[2] Path so far: 
+[2] - "Tristram" -> "Arbre"
+[2] - "Arbre" -> "Tambi"
+[2] - "Tambi" -> "Straylight"
+[2] No travel options available: 
+No subpaths returned valid results
+[0] --- "Arbre" -> "Straylight"
+----------
+[1] Start
+[1] Current location: "Straylight"
+[1] Path so far: 
+[1] - "Tristram" -> "Arbre"
+[1] - "Arbre" -> "Straylight"
+[1] No travel options available: 
+No subpaths returned valid results
+----------
+Tick 15
+----------
+[0] Start
+[0] Current location: "Snowdin"
+[0] Path so far: 
+[0] - "Tristram" -> "Snowdin"
+[0] Available options: 
+[0] --- "Snowdin" -> "Tambi"
+[0] --- "Snowdin" -> "Straylight"
+[0] Iterating through links: 
+[0] --- "Snowdin" -> "Tambi"
+----------
+[1] Start
+[1] Current location: "Tambi"
+[1] Path so far: 
+[1] - "Tristram" -> "Snowdin"
+[1] - "Snowdin" -> "Tambi"
+[1] Available options: 
+[1] --- "Tambi" -> "Straylight"
+[1] Iterating through links: 
+[1] --- "Tambi" -> "Straylight"
+----------
+[2] Start
+[2] Current location: "Straylight"
+[2] Path so far: 
+[2] - "Tristram" -> "Snowdin"
+[2] - "Snowdin" -> "Tambi"
+[2] - "Tambi" -> "Straylight"
+[2] No travel options available: 
+No subpaths returned valid results
+[0] --- "Snowdin" -> "Straylight"
+----------
+[1] Start
+[1] Current location: "Straylight"
+[1] Path so far: 
+[1] - "Tristram" -> "Snowdin"
+[1] - "Snowdin" -> "Straylight"
+[1] No travel options available: 
+No subpaths returned valid results
+----------
+Tick 16
+----------
+[0] Start
+[0] Current location: "Tambi"
+[0] Path so far: 
+[0] - "Tristram" -> "Tambi"
+[0] Available options: 
+[0] --- "Tambi" -> "Straylight"
+[0] Iterating through links: 
+[0] --- "Tambi" -> "Straylight"
+----------
+[1] Start
+[1] Current location: "Straylight"
+[1] Path so far: 
+[1] - "Tristram" -> "Tambi"
+[1] - "Tambi" -> "Straylight"
+[1] No travel options available: 
+No subpaths returned valid results
+----------
+Tick 17
+----------
+[0] Start
+[0] Current location: "Straylight"
+[0] Path so far: 
+[0] - "Tristram" -> "Straylight"
+[0] No travel options available: 
+----------
+Tick 18
+----------
+[0] Start
+[0] Current location: "Arbre"
+[0] Path so far: 
+[0] - "AlphaCentauri" -> "Arbre"
+[0] Available options: 
+[0] --- "Arbre" -> "Snowdin"
+[0] --- "Arbre" -> "Tambi"
+[0] --- "Arbre" -> "Straylight"
+[0] Iterating through links: 
+[0] --- "Arbre" -> "Snowdin"
+----------
+[1] Start
+[1] Current location: "Snowdin"
+[1] Path so far: 
+[1] - "AlphaCentauri" -> "Arbre"
+[1] - "Arbre" -> "Snowdin"
+[1] Available options: 
+[1] --- "Snowdin" -> "Tambi"
+[1] --- "Snowdin" -> "Straylight"
+[1] Iterating through links: 
+[1] --- "Snowdin" -> "Tambi"
+----------
+[2] Start
+[2] Current location: "Tambi"
+[2] Path so far: 
+[2] - "AlphaCentauri" -> "Arbre"
+[2] - "Arbre" -> "Snowdin"
+[2] - "Snowdin" -> "Tambi"
+[2] Available options: 
+[2] --- "Tambi" -> "Straylight"
+[2] Iterating through links: 
+[2] --- "Tambi" -> "Straylight"
+----------
+[3] Start
+[3] Current location: "Straylight"
+[3] Path so far: 
+[3] - "AlphaCentauri" -> "Arbre"
+[3] - "Arbre" -> "Snowdin"
+[3] - "Snowdin" -> "Tambi"
+[3] - "Tambi" -> "Straylight"
+[3] No travel options available: 
+No subpaths returned valid results
+[1] --- "Snowdin" -> "Straylight"
+----------
+[2] Start
+[2] Current location: "Straylight"
+[2] Path so far: 
+[2] - "AlphaCentauri" -> "Arbre"
+[2] - "Arbre" -> "Snowdin"
+[2] - "Snowdin" -> "Straylight"
+[2] No travel options available: 
+No subpaths returned valid results
+[0] --- "Arbre" -> "Tambi"
+----------
+[1] Start
+[1] Current location: "Tambi"
+[1] Path so far: 
+[1] - "AlphaCentauri" -> "Arbre"
+[1] - "Arbre" -> "Tambi"
+[1] Available options: 
+[1] --- "Tambi" -> "Straylight"
+[1] Iterating through links: 
+[1] --- "Tambi" -> "Straylight"
+----------
+[2] Start
+[2] Current location: "Straylight"
+[2] Path so far: 
+[2] - "AlphaCentauri" -> "Arbre"
+[2] - "Arbre" -> "Tambi"
+[2] - "Tambi" -> "Straylight"
+[2] No travel options available: 
+No subpaths returned valid results
+[0] --- "Arbre" -> "Straylight"
+----------
+[1] Start
+[1] Current location: "Straylight"
+[1] Path so far: 
+[1] - "AlphaCentauri" -> "Arbre"
+[1] - "Arbre" -> "Straylight"
+[1] No travel options available: 
+No subpaths returned valid results
+----------
+Tick 19
+----------
+[0] Start
+[0] Current location: "Snowdin"
+[0] Path so far: 
+[0] - "AlphaCentauri" -> "Snowdin"
+[0] Available options: 
+[0] --- "Snowdin" -> "Tambi"
+[0] --- "Snowdin" -> "Straylight"
+[0] Iterating through links: 
+[0] --- "Snowdin" -> "Tambi"
+----------
+[1] Start
+[1] Current location: "Tambi"
+[1] Path so far: 
+[1] - "AlphaCentauri" -> "Snowdin"
+[1] - "Snowdin" -> "Tambi"
+[1] Available options: 
+[1] --- "Tambi" -> "Straylight"
+[1] Iterating through links: 
+[1] --- "Tambi" -> "Straylight"
+----------
+[2] Start
+[2] Current location: "Straylight"
+[2] Path so far: 
+[2] - "AlphaCentauri" -> "Snowdin"
+[2] - "Snowdin" -> "Tambi"
+[2] - "Tambi" -> "Straylight"
+[2] No travel options available: 
+No subpaths returned valid results
+[0] --- "Snowdin" -> "Straylight"
+----------
+[1] Start
+[1] Current location: "Straylight"
+[1] Path so far: 
+[1] - "AlphaCentauri" -> "Snowdin"
+[1] - "Snowdin" -> "Straylight"
+[1] No travel options available: 
+No subpaths returned valid results
+----------
+Tick 20
+----------
+[0] Start
+[0] Current location: "Tambi"
+[0] Path so far: 
+[0] - "AlphaCentauri" -> "Tambi"
+[0] Available options: 
+[0] --- "Tambi" -> "Straylight"
+[0] Iterating through links: 
+[0] --- "Tambi" -> "Straylight"
+----------
+[1] Start
+[1] Current location: "Straylight"
+[1] Path so far: 
+[1] - "AlphaCentauri" -> "Tambi"
+[1] - "Tambi" -> "Straylight"
+[1] No travel options available: 
+No subpaths returned valid results
+----------
+Tick 21
+----------
+[0] Start
+[0] Current location: "Straylight"
+[0] Path so far: 
+[0] - "AlphaCentauri" -> "Straylight"
+[0] No travel options available: 
+----------
+Tick 22
+----------
+[0] Start
+[0] Current location: "Snowdin"
+[0] Path so far: 
+[0] - "Arbre" -> "Snowdin"
+[0] Available options: 
+[0] --- "Snowdin" -> "Tambi"
+[0] --- "Snowdin" -> "Straylight"
+[0] Iterating through links: 
+[0] --- "Snowdin" -> "Tambi"
+----------
+[1] Start
+[1] Current location: "Tambi"
+[1] Path so far: 
+[1] - "Arbre" -> "Snowdin"
+[1] - "Snowdin" -> "Tambi"
+[1] Available options: 
+[1] --- "Tambi" -> "Straylight"
+[1] Iterating through links: 
+[1] --- "Tambi" -> "Straylight"
+----------
+[2] Start
+[2] Current location: "Straylight"
+[2] Path so far: 
+[2] - "Arbre" -> "Snowdin"
+[2] - "Snowdin" -> "Tambi"
+[2] - "Tambi" -> "Straylight"
+[2] No travel options available: 
+No subpaths returned valid results
+[0] --- "Snowdin" -> "Straylight"
+----------
+[1] Start
+[1] Current location: "Straylight"
+[1] Path so far: 
+[1] - "Arbre" -> "Snowdin"
+[1] - "Snowdin" -> "Straylight"
+[1] No travel options available: 
+No subpaths returned valid results
+----------
+Tick 23
+----------
+[0] Start
+[0] Current location: "Tambi"
+[0] Path so far: 
+[0] - "Arbre" -> "Tambi"
+[0] Available options: 
+[0] --- "Tambi" -> "Straylight"
+[0] Iterating through links: 
+[0] --- "Tambi" -> "Straylight"
+----------
+[1] Start
+[1] Current location: "Straylight"
+[1] Path so far: 
+[1] - "Arbre" -> "Tambi"
+[1] - "Tambi" -> "Straylight"
+[1] No travel options available: 
+No subpaths returned valid results
+----------
+Tick 24
+----------
+[0] Start
+[0] Current location: "Straylight"
+[0] Path so far: 
+[0] - "Arbre" -> "Straylight"
+[0] No travel options available: 
+----------
+Tick 25
+----------
+[0] Start
+[0] Current location: "Tambi"
+[0] Path so far: 
+[0] - "Snowdin" -> "Tambi"
+[0] Available options: 
+[0] --- "Tambi" -> "Straylight"
+[0] Iterating through links: 
+[0] --- "Tambi" -> "Straylight"
+----------
+[1] Start
+[1] Current location: "Straylight"
+[1] Path so far: 
+[1] - "Snowdin" -> "Tambi"
+[1] - "Tambi" -> "Straylight"
+[1] No travel options available: 
+No subpaths returned valid results
+----------
+Tick 26
+----------
+[0] Start
+[0] Current location: "Straylight"
+[0] Path so far: 
+[0] - "Snowdin" -> "Straylight"
+[0] No travel options available: 
+----------
+Tick 27
+----------
+[0] Start
+[0] Current location: "Straylight"
+[0] Path so far: 
+[0] - "Tambi" -> "Straylight"
+[0] No travel options available: 
+----
+----
+Valid paths found: 1
+-- Route - Distance : 719
+"Faerun" -> "Norrath", "Norrath" -> "Tristram", "Tristram" -> "AlphaCentauri", "AlphaCentauri" -> "Arbre", "Arbre" -> "Snowdin", "Snowdin" -> "Tambi", "Tambi" -> "Straylight", ----
+Unique names to visit: ["Faerun", "Norrath", "Tristram", "AlphaCentauri", "Arbre", "Snowdin", "Tambi", "Straylight"]
+Part1: 28
+Part2: -1
