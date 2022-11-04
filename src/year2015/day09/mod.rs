@@ -1,4 +1,4 @@
-use std::{collections::HashMap, fs, ops::Index};
+use std::{cmp, collections::HashMap, fs, ops::Index};
 
 use itertools::Itertools;
 
@@ -93,23 +93,24 @@ fn propagate(
     unique_names: &Vec<String>,
     previous_locations: Vec<Link>,
     depth: u32,
+    slowest: bool,
 ) -> Option<Vec<Link>> {
-    println!("----------");
-    println!("[{:?}] Start", depth);
+    // // // println!("----------");
+    // // // println!("[{:?}] Start", depth);
     let previous_locations: Vec<Link> = previous_locations.clone();
     let mut previous_location_names: Vec<String> = vec![];
 
     //
     let current_location = (&previous_locations).last().unwrap().to.clone();
-    println!("[{:?}] Current location: {:?}", depth, current_location);
+    // // // println!("[{:?}] Current location: {:?}", depth, current_location);
 
     //
-    println!("[{:?}] Path so far: ", depth);
+    // // // println!("[{:?}] Path so far: ", depth);
     for previous_link in (&previous_locations).into_iter() {
-        println!(
-            "[{:?}] - {:?} -> {:?}",
-            depth, previous_link.from, previous_link.to
-        );
+        // // // println!(
+        // // //     "[{:?}] - {:?} -> {:?}",
+        // // //     depth, previous_link.from, previous_link.to
+        // // // );
         if !previous_location_names.contains(&previous_link.from) {
             previous_location_names.push(previous_link.from.clone());
         }
@@ -117,54 +118,60 @@ fn propagate(
             previous_location_names.push(previous_link.to.clone());
         }
     }
-    println!("[{:?}]Previous locations:", depth);
+    // // // println!("[{:?}]Previous locations:", depth);
     for location in (&previous_location_names).into_iter() {
-        println!("[{:?}] - {:?}", depth, location);
+        // // // println!("[{:?}] - {:?}", depth, location);
     }
 
     let available_links = (&from_lookup).get(&current_location);
 
     // Checking if we have reached our final goal
     if previous_location_names.len() == unique_names.len() {
-        println!("[{:?}] We have visited all of the places!", depth);
+        // // // println!("[{:?}] We have visited all of the places!", depth);
         return Some(previous_locations.clone());
     }
 
     if available_links.is_none() {
-        println!("[{:?}] No travel options available: ", depth);
+        // // // println!("[{:?}] No travel options available: ", depth);
         return None;
     }
 
     //
-    println!("[{:?}] Available options: ", depth);
-    for available_link in (&available_links).unwrap().into_iter() {
-        if !previous_location_names.contains(&available_link.to) {
-            println!(
-                "[{:?}] --- {:?} -> {:?}",
-                depth, available_link.from, available_link.to
-            );
-        }
-    }
+    // // // println!("[{:?}] Available options: ", depth);
+    // // // for available_link in (&available_links).unwrap().into_iter() {
+    // // //     if !previous_location_names.contains(&available_link.to) {
+    // // //         // // println!(
+    // // //         // //     "[{:?}] --- {:?} -> {:?}",
+    // // //         // //     depth, available_link.from, available_link.to
+    // // //         // // );
+    // // //     }
+    // // // }
 
     // Iterate through available links
-    println!("[{:?}] Iterating through links: ", depth);
+    // // // println!("[{:?}] Iterating through links: ", depth);
     let mut continued_journeys: Vec<Vec<Link>> = vec![];
 
     for available_link in (&available_links).unwrap().into_iter() {
         if !previous_location_names.contains(&available_link.to) {
-            println!(
-                "[{:?}] --- {:?} -> {:?}",
-                depth, available_link.from, available_link.to
-            );
+            // // // println!(
+            // // //     "[{:?}] --- {:?} -> {:?}",
+            // // //     depth, available_link.from, available_link.to
+            // // // );
             let mut continued_journey = previous_locations.clone();
             continued_journey.push(available_link.clone());
-            let result = propagate(from_lookup, unique_names, continued_journey, depth + 1);
+            let result = propagate(
+                from_lookup,
+                unique_names,
+                continued_journey,
+                depth + 1,
+                slowest,
+            );
 
             if result.is_some() {
                 continued_journeys.push(result.unwrap().clone());
             }
         } else {
-            println!("[{:?}] --- Already visited {:?}", depth, available_link.to);
+            // // // println!("[{:?}] --- Already visited {:?}", depth, available_link.to);
         }
     }
 
@@ -174,12 +181,14 @@ fn propagate(
             return Some(continued_journeys.first().unwrap().clone());
         }
 
-        // Pick best result out of the multi choice
+        // Pick slowest result out of the multi choice
         return Some(
             (&continued_journeys)
                 .into_iter()
                 .reduce(|a, b| {
-                    if get_distance(a) < get_distance(b) {
+                    if (slowest && get_distance(a) > get_distance(b))
+                        || (slowest == false && get_distance(a) < get_distance(b))
+                    {
                         return a;
                     }
                     return b;
@@ -189,63 +198,56 @@ fn propagate(
         );
     }
 
-    println!("No subpaths returned valid results");
+    // // // println!("No subpaths returned valid results");
     return None;
 }
-
-fn part1() -> usize {
+fn find_routes_distance(slowest: bool) -> Vec<Link> {
     let results = parse();
     let from_lookup = get_nodes_and_links(&results);
     let unique_names = get_node_names(&results);
 
-    // Print processed data
-    for (key, value) in (&from_lookup).into_iter() {
-        println!("{:?}", key);
-
-        for value in value.into_iter() {
-            println!(
-                " - {:?} -> {:?}, {:?}",
-                value.from, value.to, value.distance
-            );
-        }
-    }
-    // return 0;
-    println!("----");
     // Quasi A* Path finding?
     let mut routes_found: Vec<Vec<Link>> = vec![];
     let mut loop_index = 0;
     for link in (&results) {
-        println!("----------");
-        println!("Tick {:?}", loop_index);
         loop_index = loop_index + 1;
         let result = propagate(
             &from_lookup.clone(),
             &unique_names.clone(),
             vec![link.clone()],
             0,
+            slowest,
         );
         if result.is_some() {
             routes_found.push(result.unwrap().clone());
         }
     }
 
-    println!("----");
-    println!("----");
-    println!("Valid paths found: {:?}", routes_found.len());
-    for route in (&routes_found).into_iter() {
-        println!("-- Route - Distance : {:?}", get_distance(&route));
-        for link in (&route).into_iter() {
-            print!("{:?} -> {:?}, ", link.from, link.to);
-        }
-    }
-    println!("----");
-    println!("Unique names to visit: {:?}", unique_names);
-
-    return results.len();
+    return (&routes_found)
+        .into_iter()
+        .reduce(|a, b| {
+            if slowest {
+                if (get_distance(a) > get_distance(b)) {
+                    return a;
+                }
+            } else {
+                if (get_distance(a) < get_distance(b)) {
+                    return a;
+                }
+            };
+            return b;
+        })
+        .unwrap()
+        .clone();
+}
+fn part1() -> u32 {
+    let route = find_routes_distance(false);
+    return get_distance(&route);
 }
 
-fn part2() -> i32 {
-    return -1;
+fn part2() -> u32 {
+    let route = find_routes_distance(true);
+    return get_distance(&route);
 }
 
 pub fn puzzle() {
