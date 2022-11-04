@@ -1,6 +1,4 @@
-use std::{cmp, collections::HashMap, fs, ops::Index};
-
-use itertools::Itertools;
+use std::{collections::HashMap, fs};
 
 const PATH: &str = "src/year2015/day09/data.raw";
 
@@ -119,9 +117,9 @@ fn propagate(
         }
     }
     // // // println!("[{:?}]Previous locations:", depth);
-    for location in (&previous_location_names).into_iter() {
-        // // // println!("[{:?}] - {:?}", depth, location);
-    }
+    // // for location in (&previous_location_names).into_iter() {
+    // // // println!("[{:?}] - {:?}", depth, location);
+    // // // }
 
     let available_links = (&from_lookup).get(&current_location);
 
@@ -209,7 +207,7 @@ fn find_routes_distance(slowest: bool) -> Vec<Link> {
     // Quasi A* Path finding?
     let mut routes_found: Vec<Vec<Link>> = vec![];
     let mut loop_index = 0;
-    for link in (&results) {
+    for link in &results {
         loop_index = loop_index + 1;
         let result = propagate(
             &from_lookup.clone(),
@@ -227,11 +225,11 @@ fn find_routes_distance(slowest: bool) -> Vec<Link> {
         .into_iter()
         .reduce(|a, b| {
             if slowest {
-                if (get_distance(a) > get_distance(b)) {
+                if get_distance(a) > get_distance(b) {
                     return a;
                 }
             } else {
-                if (get_distance(a) < get_distance(b)) {
+                if get_distance(a) < get_distance(b) {
                     return a;
                 }
             };
