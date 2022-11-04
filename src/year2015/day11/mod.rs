@@ -9,6 +9,11 @@ fn read_file() -> String {
 
 fn part1() -> usize {
     let result = read_file();
+
+    let alphabet: Vec<char> = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+        .chars()
+        .collect();
+
     return result.lines().count();
 }
 
