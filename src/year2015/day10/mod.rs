@@ -50,14 +50,19 @@ fn part1() -> usize {
         counter = counter + 1;
         buffer = process(buffer);
     }
-
-    println!("Result {:?}", buffer.len());
-    return 0;
-    // contents.lines().count();
+    return buffer.len();
 }
 
-fn part2() -> i32 {
-    return -1;
+fn part2() -> usize {
+    let contents = read_file();
+
+    let mut counter = 0;
+    let mut buffer = process(contents);
+    for i in 0..49 {
+        counter = counter + 1;
+        buffer = process(buffer);
+    }
+    return buffer.len();
 }
 
 pub fn puzzle() {
