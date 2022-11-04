@@ -1,4 +1,4 @@
-use std::{fs, result};
+use std::fs;
 
 const PATH: &str = "src/year2015/day10/data.raw";
 
@@ -12,9 +12,9 @@ fn process(contents: String) -> String {
     let mut counters: Vec<(char, i32)> = vec![];
     let mut last_counter: Option<(char, i32)> = None;
 
-    for (index, character) in characters.into_iter().enumerate() {
+    for character in characters.into_iter() {
         // First pass
-        if (last_counter.is_none()) {
+        if last_counter.is_none() {
             last_counter = Some((character.clone(), 1));
             counters.push(last_counter.unwrap());
 
@@ -46,7 +46,7 @@ fn part1() -> usize {
 
     let mut counter = 0;
     let mut buffer = process(contents);
-    for i in 0..39 {
+    for _i in 0..39 {
         counter = counter + 1;
         buffer = process(buffer);
     }
@@ -58,7 +58,7 @@ fn part2() -> usize {
 
     let mut counter = 0;
     let mut buffer = process(contents);
-    for i in 0..49 {
+    for _i in 0..49 {
         counter = counter + 1;
         buffer = process(buffer);
     }
