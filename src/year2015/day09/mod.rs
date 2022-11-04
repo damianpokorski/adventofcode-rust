@@ -1,5 +1,7 @@
 use std::{collections::HashMap, fs, ops::Index};
 
+use itertools::Itertools;
+
 const PATH: &str = "src/year2015/day09/data.raw";
 
 fn read_file() -> String {
@@ -24,6 +26,11 @@ fn parse() -> Vec<Link> {
         result.push(Link {
             from: pieces[0].to_string(),
             to: pieces[1].to_string(),
+            distance: (pieces[2]).parse().unwrap(),
+        });
+        result.push(Link {
+            from: pieces[1].to_string(),
+            to: pieces[0].to_string(),
             distance: (pieces[2]).parse().unwrap(),
         });
     }
@@ -110,14 +117,21 @@ fn propagate(
             previous_location_names.push(previous_link.to.clone());
         }
     }
+    println!("[{:?}]Previous locations:", depth);
+    for location in (&previous_location_names).into_iter() {
+        println!("[{:?}] - {:?}", depth, location);
+    }
+
     let available_links = (&from_lookup).get(&current_location);
+
+    // Checking if we have reached our final goal
+    if previous_location_names.len() == unique_names.len() {
+        println!("[{:?}] We have visited all of the places!", depth);
+        return Some(previous_locations.clone());
+    }
+
     if available_links.is_none() {
         println!("[{:?}] No travel options available: ", depth);
-        // Checking if we have reached our final goal
-        if previous_location_names.len() == unique_names.len() {
-            println!("[{:?}] We have visited all of the places!", depth);
-            return Some(previous_locations.clone());
-        }
         return None;
     }
 
@@ -186,10 +200,16 @@ fn part1() -> usize {
 
     // Print processed data
     for (key, value) in (&from_lookup).into_iter() {
-        println!("[{:?}] - {:?}", key, value);
-        println!("----");
-    }
+        println!("{:?}", key);
 
+        for value in value.into_iter() {
+            println!(
+                " - {:?} -> {:?}, {:?}",
+                value.from, value.to, value.distance
+            );
+        }
+    }
+    // return 0;
     println!("----");
     // Quasi A* Path finding?
     let mut routes_found: Vec<Vec<Link>> = vec![];
