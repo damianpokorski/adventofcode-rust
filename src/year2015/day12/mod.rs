@@ -1,5 +1,4 @@
-use core::num;
-use std::{collections::HashMap, fs, str::FromStr};
+use std::{collections::HashMap, fs};
 
 use fancy_regex::Regex;
 use itertools::Itertools;
@@ -72,7 +71,7 @@ fn part2() -> i64 {
     let deserialized: HashMap<String, Value> = serde_json::from_str(&result).unwrap();
 
     let mut sum = 0;
-    for (index, (raw, value)) in deserialized.into_iter().enumerate() {
+    for (_index, (_raw, value)) in deserialized.into_iter().enumerate() {
         sum = sum + recursive_value_counting(&value);
     }
     return sum;
