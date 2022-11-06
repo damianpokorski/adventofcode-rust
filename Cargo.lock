@@ -6,6 +6,7 @@ version = 3
 name = "adventofcode-rust"
 version = "0.1.0"
 dependencies = [
+ "combinations",
  "fancy-regex",
  "itertools",
  "md5",
@@ -36,6 +37,12 @@ name = "bit-vec"
 version = "0.6.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "349f9b6a179ed607305526ca489b34ad0a41aed5f7980fa90eb03160b69598fb"
+
+[[package]]
+name = "combinations"
+version = "0.1.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "728b7ab3119b5167cc60a4aad16b6086b762278f5571cc650e7eed2e89a23a15"
 
 [[package]]
 name = "either"
