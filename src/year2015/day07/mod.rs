@@ -1,6 +1,6 @@
-use std::{fs, num::ParseIntError};
+use std::num::ParseIntError;
 
-const PATH: &str = "src/year2015/day07/data.raw";
+use crate::common::puzzle_data;
 
 #[derive(Debug, Clone, Copy)]
 enum Gate {
@@ -52,10 +52,6 @@ impl Evaluable for Wire {
     }
 }
 
-fn read_file() -> String {
-    println!("Reading a file: {PATH}");
-    return fs::read_to_string(PATH).expect("Should be able to read the file");
-}
 fn segment_to_value(segment: &str) -> (Option<u16>, Option<Gate>, Option<String>) {
     match segment {
         "NOT" => return (None, Some(Gate::NOT), None),
@@ -79,7 +75,8 @@ fn parse() -> Vec<Wire> {
     let mut wires: Vec<Wire> = Vec::new();
 
     // Process input
-    for line in read_file().split("\n").into_iter() {
+    let contents = puzzle_data(std::file!());
+    for line in contents.split("\n").into_iter() {
         let target = line.split(" -> ").last().unwrap();
         // Remove target and arrow
         let left_side = line.replace(" -> ", "").replace(target, "");

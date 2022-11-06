@@ -1,14 +1,7 @@
-use std::fs;
-
-const PATH: &str = "src/year2015/day01/data.raw";
-
-fn read_file() -> String {
-    println!("Reading a file: {PATH}");
-    return fs::read_to_string(PATH).expect("Should be able to read the file");
-}
+use crate::common::puzzle_data;
 
 fn part1() -> i32 {
-    let contents = read_file();
+    let contents = puzzle_data(std::file!());
 
     let mut counter = 0;
 
@@ -20,7 +13,7 @@ fn part1() -> i32 {
 }
 
 fn part2() -> usize {
-    let contents = read_file();
+    let contents = puzzle_data(std::file!());
 
     let mut counter: i32 = 0;
 

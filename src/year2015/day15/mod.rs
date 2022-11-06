@@ -1,13 +1,12 @@
 use crate::common::puzzle_data;
 
 fn part1() -> usize {
-    let contents = puzzle_data(std::file!());
-    return contents.lines().count();
+    let result = puzzle_data(std::file!());
+    return result.lines().count();
 }
 
-fn part2() -> usize {
-    let contents = puzzle_data(std::file!());
-    return contents.lines().count();
+fn part2() -> i32 {
+    return -1;
 }
 
 pub fn puzzle() {

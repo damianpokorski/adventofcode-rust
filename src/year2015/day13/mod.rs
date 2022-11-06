@@ -1,8 +1,6 @@
-use std::{collections::HashMap, fs};
-
+use crate::common::puzzle_data;
 use itertools::Itertools;
-
-const PATH: &str = "src/year2015/day13/data.raw";
+use std::collections::HashMap;
 
 #[derive(Debug, Clone)]
 struct SeatingImpact {
@@ -11,13 +9,8 @@ struct SeatingImpact {
     impact: i32,
 }
 
-fn read_file() -> String {
-    println!("Reading a file: {PATH}");
-    return fs::read_to_string(PATH).expect("Should be able to read the file");
-}
-
 fn parse() -> Vec<SeatingImpact> {
-    let result = read_file();
+    let result = puzzle_data(std::file!());
     let mut links: Vec<SeatingImpact> = vec![];
     for line in (&result).split("\n").into_iter() {
         let buffer = line

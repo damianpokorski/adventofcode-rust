@@ -1,11 +1,5 @@
-use std::fs;
+use crate::common::puzzle_data;
 
-const PATH: &str = "src/year2015/day10/data.raw";
-
-fn read_file() -> String {
-    println!("Reading a file: {PATH}");
-    return fs::read_to_string(PATH).expect("Should be able to read the file");
-}
 fn process(contents: String) -> String {
     let characters = contents.chars();
 
@@ -42,7 +36,7 @@ fn process(contents: String) -> String {
 }
 
 fn part1() -> usize {
-    let contents = read_file();
+    let contents = puzzle_data(std::file!());
 
     let mut counter = 0;
     let mut buffer = process(contents);
@@ -54,7 +48,7 @@ fn part1() -> usize {
 }
 
 fn part2() -> usize {
-    let contents = read_file();
+    let contents = puzzle_data(std::file!());
 
     let mut counter = 0;
     let mut buffer = process(contents);

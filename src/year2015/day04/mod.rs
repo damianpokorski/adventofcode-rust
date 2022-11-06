@@ -1,37 +1,29 @@
-use std::{fs};
-
-const PATH: &str = "src/year2015/day04/data.raw";
-
-
-fn read_file() -> String {
-  println!("Reading a file: {PATH}");
-  return fs::read_to_string(PATH).expect("Should be able to read the file");
-}
+use crate::common::puzzle_data;
 
 fn calc(start_with: &String) -> (i32, String) {
-  let answer:String = read_file();
-  let mut i = 0;
+    let answer = puzzle_data(std::file!());
+    let mut i = 0;
 
-  loop {
-    let md5val = format!("{:x}", md5::compute(format!("{answer}{i}")));
-    if md5val.starts_with(start_with) {
-      return (i, md5val);
+    loop {
+        let md5val = format!("{:x}", md5::compute(format!("{answer}{i}")));
+        if md5val.starts_with(start_with) {
+            return (i, md5val);
+        }
+        i += 1;
     }
-    i += 1;
-  }
 }
 
 fn part1() -> (i32, String) {
-  return calc(&String::from("00000"));
+    return calc(&String::from("00000"));
 }
 
 fn part2() -> (i32, String) {
-  return calc(&String::from("000000"));
+    return calc(&String::from("000000"));
 }
 
 pub fn puzzle() {
-  let result = part1();
-  println!("Part1: {:?}", result);
-  let result = part2();
-  println!("Part2: {:?}", result);
+    let result = part1();
+    println!("Part1: {:?}", result);
+    let result = part2();
+    println!("Part2: {:?}", result);
 }

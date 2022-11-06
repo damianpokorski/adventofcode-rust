@@ -1,15 +1,9 @@
-use std::{collections::HashMap, fs};
-
 use fancy_regex::Regex;
 use itertools::Itertools;
 use serde_json::{json, Value};
+use std::collections::HashMap;
 
-const PATH: &str = "src/year2015/day12/data.raw";
-
-fn read_file() -> String {
-    println!("Reading a file: {PATH}");
-    return fs::read_to_string(PATH).expect("Should be able to read the file");
-}
+use crate::common::puzzle_data;
 
 fn sum_of_numbers_in_strict(string: String) -> i32 {
     let regex = Regex::new(r"((-|)\d+)").unwrap();
@@ -30,7 +24,7 @@ fn sum_of_numbers_in_strict(string: String) -> i32 {
 }
 
 fn part1() -> i32 {
-    let result = read_file();
+    let result = puzzle_data(std::file!());
     return sum_of_numbers_in_strict(result);
 }
 
@@ -65,7 +59,7 @@ fn recursive_value_counting(value: &Value) -> i64 {
 }
 
 fn part2() -> i64 {
-    let result = read_file();
+    let result = puzzle_data(std::file!());
 
     // json parser
     let deserialized: HashMap<String, Value> = serde_json::from_str(&result).unwrap();

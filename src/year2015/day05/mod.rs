@@ -1,13 +1,8 @@
-use std::{fs, vec};
+use std::vec;
 
 use fancy_regex::Regex;
 
-const PATH: &str = "src/year2015/day05/data.raw";
-
-fn read_file() -> String {
-    println!("Reading a file: {PATH}");
-    return fs::read_to_string(PATH).expect("Should be able to read the file");
-}
+use crate::common::puzzle_data;
 
 fn part1() -> (i32, i32) {
     let mut naughty = 0;
@@ -21,7 +16,8 @@ fn part1() -> (i32, i32) {
     let empty_letter = "_";
 
     // Iterate through lines
-    for line in read_file()
+    let contents = puzzle_data(std::file!());
+    for line in contents
         .split_ascii_whitespace()
         .map(|x| String::from(x))
         .into_iter()
@@ -67,7 +63,8 @@ fn part2() -> (i32, i32) {
     let mut nice = 0;
 
     // Iterate through lines
-    for line in read_file()
+    let contents = puzzle_data(std::file!());
+    for line in contents
         .split_ascii_whitespace()
         .map(|x| String::from(x))
         .into_iter()

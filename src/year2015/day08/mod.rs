@@ -1,13 +1,6 @@
-use std::fs;
-
 use fancy_regex::Regex;
 
-const PATH: &str = "src/year2015/day08/data.raw";
-
-fn read_file() -> String {
-    println!("Reading a file: {PATH}");
-    return fs::read_to_string(PATH).expect("Should be able to read the file");
-}
+use crate::common::puzzle_data;
 
 fn part1() -> i32 {
     let quote_mark_stripper = Regex::new(r#"^\"(.*)\"$"#).unwrap();
@@ -15,7 +8,8 @@ fn part1() -> i32 {
     let double_escape = Regex::new(r#"\\(.)"#).unwrap();
 
     let mut sum: i32 = 0;
-    for line in read_file().split("\n").into_iter() {
+    let contents = puzzle_data(std::file!());
+    for line in contents.split("\n").into_iter() {
         println!("{:?}", line);
         let question_marks = &quote_mark_stripper.replace_all(&line, "$1").into_owned();
         let hexes = &hexadecimal_replacer
@@ -46,7 +40,8 @@ fn part2() -> i32 {
     ];
 
     let mut sum: i32 = 0;
-    for line in read_file().split("\n").into_iter() {
+    let contents = puzzle_data(std::file!());
+    for line in contents.split("\n").into_iter() {
         println!("{0}", line);
         let mut buffer = line.clone().to_string();
         let mut pass = 0;

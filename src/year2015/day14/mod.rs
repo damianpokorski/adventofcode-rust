@@ -1,12 +1,6 @@
-use std::{collections::HashMap, fs};
-
+use crate::common::puzzle_data;
 use itertools::Itertools;
-
-const PATH: &str = "src/year2015/day14/data.raw";
-
-fn read_file() -> String {
-    return fs::read_to_string(PATH).expect("Should be able to read the file");
-}
+use std::collections::HashMap;
 
 #[derive(Debug)]
 struct Reindeer {
@@ -45,7 +39,7 @@ impl Reindeer {
     }
 }
 fn get_reindeer() -> Vec<Reindeer> {
-    return read_file()
+    return puzzle_data(std::file!())
         .split("\n")
         .map(|string| string.replace(" can fly", ""))
         .map(|string| string.replace(" km/s for", ""))

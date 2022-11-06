@@ -1,11 +1,6 @@
-use std::{collections::HashMap, fs};
+use std::collections::HashMap;
 
-const PATH: &str = "src/year2015/day09/data.raw";
-
-fn read_file() -> String {
-    println!("Reading a file: {PATH}");
-    return fs::read_to_string(PATH).expect("Should be able to read the file");
-}
+use crate::common::puzzle_data;
 
 #[derive(Debug, Clone)]
 struct Link {
@@ -16,7 +11,7 @@ struct Link {
 
 fn parse() -> Vec<Link> {
     let mut result: Vec<Link> = vec![];
-    let data = read_file();
+    let data = puzzle_data(std::file!());
 
     for pieces in (&data).split("\n").map(|line| line.replace(" to ", " = ")) {
         let pieces: Vec<&str> = pieces.split(" = ").collect();

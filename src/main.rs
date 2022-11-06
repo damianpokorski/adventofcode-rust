@@ -1,5 +1,6 @@
 use std::env::args;
 
+pub mod common;
 pub mod year2015;
 
 fn main() {
@@ -25,6 +26,7 @@ fn main() {
             12 => year2015::day12::puzzle(),
             13 => year2015::day13::puzzle(),
             14 => year2015::day14::puzzle(),
+            15 => year2015::day15::puzzle(),
             _ => println!("Invalid day"),
         },
         _ => println!("Invalid year"),

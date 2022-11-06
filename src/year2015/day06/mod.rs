@@ -1,16 +1,10 @@
-use std::fs;
-
-const PATH: &str = "src/year2015/day06/data.raw";
-
-fn read_file() -> String {
-    println!("Reading a file: {PATH}");
-    return fs::read_to_string(PATH).expect("Should be able to read the file");
-}
+use crate::common::puzzle_data;
 
 fn parse() -> Vec<(usize, usize, usize, usize, Option<bool>)> {
     let mut output: Vec<(usize, usize, usize, usize, Option<bool>)> = Vec::new();
     // Apply input
-    for line in read_file().split("\n").map(|x| x) {
+    let contents = puzzle_data(std::file!());
+    for line in contents.split("\n").map(|x| x) {
         let coords: Vec<usize> = line
             .replace("turn off ", "")
             .replace("turn on ", "")

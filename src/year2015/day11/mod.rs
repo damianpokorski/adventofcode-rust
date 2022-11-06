@@ -1,13 +1,6 @@
-use std::fs;
-
 use itertools::Itertools;
 
-const PATH: &str = "src/year2015/day11/data.raw";
-
-fn read_file() -> String {
-    println!("Reading a file: {PATH}");
-    return fs::read_to_string(PATH).expect("Should be able to read the file");
-}
+use crate::common::puzzle_data;
 
 fn string_to_counters(string: String) -> Vec<u32> {
     return string
@@ -117,7 +110,7 @@ fn generate_new_password(password: String) -> String {
 }
 
 pub fn puzzle() {
-    let part1 = generate_new_password(read_file());
+    let part1 = generate_new_password(puzzle_data(std::file!()));
     let part2 = generate_new_password(part1.clone());
     println!("Part1: {:?}", part1);
     println!("Part2: {:?}", part2);
