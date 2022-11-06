@@ -76,7 +76,6 @@ fn get_seat_score(
 fn get_seat_arrangement_score(
     relationships: &HashMap<String, HashMap<String, i32>>,
     seating: &Vec<&&String>,
-    bail_score: i32,
 ) -> i32 {
     // Get score between first & last element
     let mut buffer = get_seat_score(
@@ -107,43 +106,107 @@ fn get_seat_arrangement_score(
     return buffer;
 }
 
-fn part1() -> usize {
-    let relationships = organize(parse());
-
-    let guests: Vec<&String> = relationships.keys().collect();
-
+fn find_best_seat_arrangement(
+    relationships: &HashMap<String, HashMap<String, i32>>,
+    guests: &Vec<&String>,
+) -> (Vec<String>, i32) {
     println!("{:?}", relationships);
     println!("{:?}", guests);
     let mut best: Option<Vec<&&String>> = None;
-    let mut bestScore = i32::MIN;
+    let mut best_score = i32::MIN;
     for permutation in guests.iter().permutations(guests.len()).unique() {
-        let score = get_seat_arrangement_score(&relationships, &permutation, 0);
-        if bestScore < score {
-            bestScore = score;
+        let score = get_seat_arrangement_score(&relationships, &permutation);
+        if best_score < score {
+            best_score = score;
             best = Some(permutation.clone());
+            // New best
+            println!("New best seating: {:?} = {:?}", permutation, score);
         }
-        println!("{:?} - {:?}", permutation, score);
     }
-    let best = best.unwrap();
-
+    let best: Vec<String> = best
+        .unwrap()
+        .into_iter()
+        .map(|string_reference| (*string_reference).clone())
+        .collect();
+    return (best, best_score);
+}
+fn print_results(
+    relationships: &HashMap<String, HashMap<String, i32>>,
+    seating: &Vec<String>,
+    score: i32,
+) {
     println!("-----------");
-    println!("Best seating: {:?}", best);
-    println!("Best score: {:?}", bestScore);
-    for index in 1..best.len() {
-        let a = best.get(index - 1).unwrap();
-        let b = best.get(index).unwrap();
+    println!("Best seating: {:?}", seating);
+    println!("Best score: {:?}", score);
+
+    let first = seating.first().unwrap();
+    let last = seating.last().unwrap();
+    let first_to_last = get_seat_score(&relationships, first, last);
+    let last_to_first = get_seat_score(&relationships, last, first);
+    println!(
+        "{:?} -> {:?} = {:?}, {:?} -> {:?} = {:?} | {:?}",
+        first,
+        last,
+        first_to_last,
+        last,
+        first,
+        last_to_first,
+        first_to_last + last_to_first
+    );
+
+    for index in 1..seating.len() {
+        let a = seating.get(index - 1).unwrap();
+        let b = seating.get(index).unwrap();
         println!(
-            "{:?} -> {:?} = {:?}",
+            "{:?} -> {:?} = {:?}, {:?} -> {:?} = {:?} | {:?}",
             a,
             b,
-            get_seat_score(&relationships, a, b)
+            get_seat_score(&relationships, a, b),
+            b,
+            a,
+            get_seat_score(&relationships, b, a),
+            get_seat_score(&relationships, a, b) + get_seat_score(&relationships, b, a)
         );
     }
-    return relationships.len();
+}
+fn part1() -> i32 {
+    let relationships = organize(parse());
+
+    let guests: Vec<&String> = relationships.keys().collect();
+    let (best, score) = find_best_seat_arrangement(&relationships, &guests);
+    print_results(&relationships, &best, score);
+    return score;
 }
 
 fn part2() -> i32 {
-    return -1;
+    let relationships = organize(parse());
+    let original_guests: Vec<&String> = relationships.keys().collect();
+    let mut relationships = relationships.clone();
+
+    // Add yourself as an ambivalent guest
+    let me = String::from("me");
+    for guest in original_guests {
+        if !relationships.keys().contains(&(&me).clone()) {
+            relationships.entry((&me).clone()).or_insert(HashMap::new());
+        }
+        // Me -> Guest
+        relationships
+            .get_mut(&me)
+            .unwrap()
+            .entry(guest.clone())
+            .or_insert(0);
+        // Guest -> Me
+        relationships
+            .get_mut(&guest.clone())
+            .unwrap()
+            .entry(me.clone())
+            .or_insert(0);
+    }
+
+    let guests: Vec<&String> = (relationships).keys().collect();
+    let (best, score) = find_best_seat_arrangement(&relationships, &guests);
+    print_results(&relationships, &best, score);
+    return score;
 }
 
 pub fn puzzle() {
