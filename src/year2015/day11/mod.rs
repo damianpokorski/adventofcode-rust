@@ -118,7 +118,7 @@ fn generate_new_password(password: String) -> String {
 
 pub fn puzzle() {
     let part1 = generate_new_password(read_file());
+    let part2 = generate_new_password(part1.clone());
     println!("Part1: {:?}", part1);
-    let part2 = generate_new_password(part1);
     println!("Part2: {:?}", part2);
 }
