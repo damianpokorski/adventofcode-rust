@@ -1,11 +1,10 @@
-use std::fs;
+use std::{collections::HashMap, fs};
 
 use itertools::Itertools;
 
 const PATH: &str = "src/year2015/day14/data.raw";
 
 fn read_file() -> String {
-    println!("Reading a file: {PATH}");
     return fs::read_to_string(PATH).expect("Should be able to read the file");
 }
 
@@ -77,8 +76,44 @@ fn part1() -> u32 {
         .unwrap();
 }
 
-fn part2() -> i32 {
-    return -1;
+fn part2() -> u32 {
+    let reindeer = get_reindeer();
+    let mut points: HashMap<String, u32> = HashMap::new();
+
+    for second in 0..2503 {
+        let raindeer_in_lead = (&reindeer)
+            .into_iter()
+            .map(|reindeer| (reindeer.name.clone(), (&reindeer).fly_for_duration(second)))
+            .reduce(|a, b| {
+                if a.1 > b.1 {
+                    return a;
+                }
+                return b;
+            })
+            .unwrap()
+            .0;
+
+        let entry = points.get_mut(&raindeer_in_lead);
+        if entry.is_none() {
+            points.entry(raindeer_in_lead.clone()).or_insert(1);
+        } else {
+            let value = entry.unwrap();
+            *value = *value + 1;
+        }
+    }
+
+    return points
+        .into_iter()
+        .enumerate()
+        .reduce(|a, b| {
+            if a.1 .1 > b.1 .1 {
+                return a;
+            }
+            return b;
+        })
+        .unwrap()
+        .1
+         .1;
 }
 
 pub fn puzzle() {
@@ -97,8 +132,9 @@ pub fn puzzle() {
     println!("Comets test flight {:?}", comet.fly_for_duration(1000));
     println!("Dancers test flight {:?}", dancer.fly_for_duration(1000));
 
-    let result = part1();
-    println!("Part1: {:?}", result);
-    let result = part2();
-    println!("Part2: {:?}", result);
+    let part1 = part1();
+    let part2 = part2();
+
+    println!("Part1: {:?}", part1);
+    println!("Part2: {:?}", part2);
 }

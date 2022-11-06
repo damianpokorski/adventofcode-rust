@@ -17,8 +17,8 @@ fn part2() -> i32 {
 }
 
 pub fn puzzle() {
-    let result = part1();
-    println!("Part1: {:?}", result);
-    let result = part2();
-    println!("Part2: {:?}", result);
+    let part1 = part1();
+    let part2 = part2();
+    println!("Part1: {:?}", part1);
+    println!("Part2: {:?}", part2);
 }
