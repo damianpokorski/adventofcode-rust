@@ -155,35 +155,12 @@ fn spoonfull_combinations(
 fn part1() -> i32 {
     let ingredients = parse();
 
-    // let ingredients = vec![
-    //     Ingredient {
-    //         name: "Butterscotch".to_string(),
-    //         capacity: -1,
-    //         durability: -2,
-    //         flavor: 6,
-    //         texture: 3,
-    //         calories: 8,
-    //         spoonfulls: 1,
-    //     },
-    //     Ingredient {
-    //         name: "Cinnamon".to_string(),
-    //         capacity: 2,
-    //         durability: 3,
-    //         flavor: -2,
-    //         texture: -1,
-    //         calories: 3,
-    //         spoonfulls: 1,
-    //     },
-    // ];
-
     let mut best = 0;
 
     let mut target: Vec<Vec<i32>> = vec![];
     spoonfull_combinations(100, vec![], &mut target, (&ingredients).len() + 0, 0);
 
     for entry in target.into_iter() {
-        println!("{:?}", entry);
-
         // Build recipe
         let mut mix = Ingredient {
             spoonfulls: 0,
@@ -197,10 +174,12 @@ fn part1() -> i32 {
 
         // For each ingredient
         for ingredient_index in 0..ingredients.len() {
-            let ingredient = ingredients.get(ingredient_index).unwrap();
-            for spoon in 0..*entry.get(ingredient_index).unwrap() {
-                mix = mix.add(ingredient);
-            }
+            mix = mix.add(
+                &ingredients
+                    .get(ingredient_index)
+                    .unwrap()
+                    .multiply(entry.get(ingredient_index).unwrap()),
+            );
         }
 
         if mix.sum() > best {
@@ -208,14 +187,47 @@ fn part1() -> i32 {
         }
     }
 
-    println!("Best: {:?}", best);
-
     // Test
-    return 0;
+    return best;
 }
 
 fn part2() -> i32 {
-    return -1;
+    let ingredients = parse();
+
+    let mut best = 0;
+
+    let mut target: Vec<Vec<i32>> = vec![];
+    spoonfull_combinations(100, vec![], &mut target, (&ingredients).len() + 0, 0);
+
+    for entry in target.into_iter() {
+        // Build recipe
+        let mut mix = Ingredient {
+            spoonfulls: 0,
+            name: "".to_string(),
+            capacity: 0,
+            durability: 0,
+            flavor: 0,
+            texture: 0,
+            calories: 0,
+        };
+
+        // For each ingredient
+        let mut calories = 0;
+        for ingredient_index in 0..ingredients.len() {
+            mix = mix.add(
+                &ingredients
+                    .get(ingredient_index)
+                    .unwrap()
+                    .multiply(entry.get(ingredient_index).unwrap()),
+            );
+        }
+
+        if mix.calories == 500 && mix.sum() > best {
+            best = mix.sum()
+        }
+    }
+
+    return best;
 }
 
 pub fn puzzle() {
