@@ -1,6 +1,6 @@
 use crate::common::puzzle_data;
 use itertools::Itertools;
-use std::collections::HashMap;
+use std::{collections::HashMap, sync::mpsc::Receiver};
 
 #[derive(Debug, Clone)]
 struct Ingredient {
@@ -122,72 +122,93 @@ fn example() {
     println!("44 Butterscotch, 56 cinnamon: {:?}", buffer.sum());
 }
 
+fn spoonfull_combinations(
+    max_spoonfulls: i32,
+    previous_combinations: Vec<i32>,
+    insert_target: &mut Vec<Vec<i32>>,
+    depth: usize,
+    running_sum: i32,
+) {
+    if depth == 0 {
+        if running_sum == max_spoonfulls {
+            insert_target.push(previous_combinations);
+        }
+        return;
+    }
+
+    for spoons in 0..max_spoonfulls {
+        if running_sum + spoons <= max_spoonfulls {
+            let mut combination = previous_combinations.clone();
+            combination.push(spoons);
+
+            spoonfull_combinations(
+                max_spoonfulls,
+                combination,
+                insert_target,
+                depth - 1,
+                running_sum + spoons,
+            );
+        }
+    }
+}
+
 fn part1() -> i32 {
     let ingredients = parse();
 
-    let _ingredients_lookup: HashMap<String, Ingredient> = parse()
-        .into_iter()
-        .map(|ingredient| (ingredient.name.clone(), ingredient))
-        .collect();
+    // let ingredients = vec![
+    //     Ingredient {
+    //         name: "Butterscotch".to_string(),
+    //         capacity: -1,
+    //         durability: -2,
+    //         flavor: 6,
+    //         texture: 3,
+    //         calories: 8,
+    //         spoonfulls: 1,
+    //     },
+    //     Ingredient {
+    //         name: "Cinnamon".to_string(),
+    //         capacity: 2,
+    //         durability: 3,
+    //         flavor: -2,
+    //         texture: -1,
+    //         calories: 3,
+    //         spoonfulls: 1,
+    //     },
+    // ];
 
-    let _ingredient_names = (&ingredients)
-        .into_iter()
-        .map(|ingredient| ingredient.name.clone())
-        .collect_vec();
+    let mut best = 0;
 
-    // go through permutations of ingredients
-    // let mut best_combination = Ingredient {
-    //     name: "buffer".to_string(),
-    //     capacity: 0,
-    //     durability: 0,
-    //     flavor: 0,
-    //     texture: 0,
-    //     calories: 0,
-    //     spoonfulls: 1,
-    // };
+    let mut target: Vec<Vec<i32>> = vec![];
+    spoonfull_combinations(100, vec![], &mut target, (&ingredients).len() + 0, 0);
 
-    // Generate permutations - multiply ingredients by 100, then cycle combinations, use modulus to cheat against permutations and not being able to have duplicates in it
-    let number_of_ingredients = (&ingredients).len().clone();
-    let _iterations = (0..(number_of_ingredients * 100)).collect_vec();
+    for entry in target.into_iter() {
+        println!("{:?}", entry);
 
-    let mut _counter = 0;
-    let mut best_sum = 0;
+        // Build recipe
+        let mut mix = Ingredient {
+            spoonfulls: 0,
+            name: "".to_string(),
+            capacity: 0,
+            durability: 0,
+            flavor: 0,
+            texture: 0,
+            calories: 0,
+        };
 
-    for recipe in (0..400)
-        .permutations(ingredients.len())
-        .unique()
-        .map(|recipe| {
-            recipe
-                .into_iter()
-                .map(|ingredient| ingredient % 100)
-                .collect_vec()
-        })
-        .filter(|recipe| {
-            return recipe.into_iter().map(|a| *a).reduce(|a, b| a + b).unwrap() == 100;
-        })
-        .into_iter()
-    {
-        let my_recipe = (&recipe)
-            .into_iter()
-            .enumerate()
-            .map(|(ingredient_index, spoons)| {
-                (&ingredients)
-                    .get(ingredient_index)
-                    .unwrap()
-                    .multiply(&spoons)
-            })
-            .collect_vec()
-            .into_iter()
-            .reduce(|a, b| a.add(&b))
-            .unwrap();
-        let my_recipe_sum = my_recipe.sum();
-        println!("{:?}", recipe);
-        println!("{:?}", my_recipe);
-        println!("{:?}", my_recipe_sum);
-        best_sum = std::cmp::max(best_sum, my_recipe_sum);
+        // For each ingredient
+        for ingredient_index in 0..ingredients.len() {
+            let ingredient = ingredients.get(ingredient_index).unwrap();
+            for spoon in 0..*entry.get(ingredient_index).unwrap() {
+                mix = mix.add(ingredient);
+            }
+        }
 
-        println!("Currently best: {:?}", best_sum);
+        if mix.sum() > best {
+            best = mix.sum()
+        }
     }
+
+    println!("Best: {:?}", best);
 
     // Test
     return 0;
