@@ -30,6 +30,7 @@ fn main() {
             16 => year2015::day16::puzzle(),
             17 => year2015::day17::puzzle(),
             18 => year2015::day18::puzzle(),
+            19 => year2015::day19::puzzle(),
             _ => println!("Invalid day"),
         },
         _ => println!("Invalid year"),
