@@ -1,6 +1,5 @@
 use crate::common::puzzle_data;
 use itertools::Itertools;
-use std::{collections::HashMap, sync::mpsc::Receiver};
 
 #[derive(Debug, Clone)]
 struct Ingredient {
@@ -212,7 +211,6 @@ fn part2() -> i32 {
         };
 
         // For each ingredient
-        let mut calories = 0;
         for ingredient_index in 0..ingredients.len() {
             mix = mix.add(
                 &ingredients

@@ -100,7 +100,7 @@ fn part1() -> i32 {
 
     let mut potential_aunts: Vec<Sue> = vec![];
     for potentil_aunt in ingest() {
-        if ((known_aunt.children == potentil_aunt.children || potentil_aunt.children == -1)
+        if (known_aunt.children == potentil_aunt.children || potentil_aunt.children == -1)
             && (known_aunt.cats == potentil_aunt.cats || potentil_aunt.cats == -1)
             && (known_aunt.samoyeds == potentil_aunt.samoyeds || potentil_aunt.samoyeds == -1)
             && (known_aunt.pomeranians == potentil_aunt.pomeranians
@@ -110,7 +110,7 @@ fn part1() -> i32 {
             && (known_aunt.goldfish == potentil_aunt.goldfish || potentil_aunt.goldfish == -1)
             && (known_aunt.trees == potentil_aunt.trees || potentil_aunt.trees == -1)
             && (known_aunt.cars == potentil_aunt.cars || potentil_aunt.cars == -1)
-            && (known_aunt.perfumes == potentil_aunt.perfumes || potentil_aunt.perfumes == -1))
+            && (known_aunt.perfumes == potentil_aunt.perfumes || potentil_aunt.perfumes == -1)
         {
             potential_aunts.push(potentil_aunt);
         }
@@ -136,7 +136,7 @@ fn part2() -> i32 {
 
     let mut potential_aunts: Vec<Sue> = vec![];
     for potentil_aunt in ingest() {
-        if ((known_aunt.children == potentil_aunt.children || potentil_aunt.children == -1)
+        if (known_aunt.children == potentil_aunt.children || potentil_aunt.children == -1)
             && (known_aunt.cats < potentil_aunt.cats || potentil_aunt.cats == -1)
             && (known_aunt.samoyeds == potentil_aunt.samoyeds || potentil_aunt.samoyeds == -1)
             && (known_aunt.pomeranians > potentil_aunt.pomeranians
@@ -146,7 +146,7 @@ fn part2() -> i32 {
             && (known_aunt.goldfish > potentil_aunt.goldfish || potentil_aunt.goldfish == -1)
             && (known_aunt.trees < potentil_aunt.trees || potentil_aunt.trees == -1)
             && (known_aunt.cars == potentil_aunt.cars || potentil_aunt.cars == -1)
-            && (known_aunt.perfumes == potentil_aunt.perfumes || potentil_aunt.perfumes == -1))
+            && (known_aunt.perfumes == potentil_aunt.perfumes || potentil_aunt.perfumes == -1)
         {
             potential_aunts.push(potentil_aunt);
         }
