@@ -34,13 +34,14 @@ fn ingest() -> (Vec<(String, String)>, Vec<String>) {
 
 fn part1() -> usize {
     let (swaps, molecules) = ingest();
+
     println!("Swaps");
     for swap in (&swaps).into_iter() {
         println!("{0} => {1}", swap.0, swap.1);
     }
+
     println!("");
     println!("Molecules: {0}", (&molecules).into_iter().join(" => "));
-
     let mut combinations: Vec<String> = vec![];
 
     // Iterate through original chain
@@ -48,15 +49,11 @@ fn part1() -> usize {
         let left = (&molecules)[0..molecule_index].join("");
         let right = (&molecules)[molecule_index + 1..].join("");
 
-        // println!("{0}_{1}", left, right);
-
         // Find out potential replacements
         for replacement in (&swaps)
             .into_iter()
             .filter(|swap| swap.0.clone() == *molecule)
         {
-            // println!("Replacements for {0} = {1}", molecule, replacement.1);
-
             // Add mutateted entry
             let mutated_entry = vec![left.clone(), replacement.1.clone(), right.clone()].join("");
             if !combinations.contains(&mutated_entry) {
@@ -69,7 +66,30 @@ fn part1() -> usize {
 }
 
 fn part2() -> usize {
-    return 0;
+    let (mut swaps, molecules) = ingest();
+    // Sort by longest
+    swaps.sort_by(|a, b| b.1.len().cmp(&a.1.len()));
+
+    println!("Swaps");
+    for swap in (&swaps).into_iter() {
+        println!("{0} => {1}", swap.0, swap.1);
+    }
+
+    let mut new_molecules = molecules.clone().join("");
+
+    let mut replacements = 0;
+
+    while !new_molecules.eq(&"e".to_string()) {
+        for swap in (&swaps).into_iter() {
+            if new_molecules.contains(&swap.1) {
+                replacements = replacements + 1;
+                new_molecules = new_molecules.replacen(&swap.1, &swap.0, 1);
+                break;
+            }
+        }
+    }
+
+    return replacements;
 }
 
 pub fn puzzle() {
