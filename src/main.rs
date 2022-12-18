@@ -2,6 +2,7 @@ use std::env::args;
 
 pub mod common;
 pub mod year2015;
+pub mod year2022;
 
 fn main() {
     let year = args().nth(1).expect("No year provided");
@@ -31,6 +32,10 @@ fn main() {
             17 => year2015::day17::puzzle(),
             18 => year2015::day18::puzzle(),
             19 => year2015::day19::puzzle(),
+            _ => println!("Invalid day"),
+        },
+        2022 => match day {
+            1 => year2022::day01::puzzle(),
             _ => println!("Invalid day"),
         },
         _ => println!("Invalid year"),
