@@ -1,5 +1,3 @@
-use std::{collections::HashMap, hash::Hash};
-
 use itertools::Itertools;
 
 use crate::common::puzzle_data;
@@ -57,11 +55,11 @@ fn ingest(contents: String) -> Vec<Round> {
                 draw: false,
                 move_score: pair.2,
             };
-            round.win = (pair.0 == Move::Rock && pair.1 == Move::Scissor)
-                || (pair.0 == Move::Scissor && pair.1 == Move::Paper)
-                || (pair.0 == Move::Paper && pair.1 == Move::Rock);
+            round.win = (round.my_move == Move::Rock && round.other_move == Move::Scissor)
+                || (round.my_move == Move::Scissor && round.other_move == Move::Paper)
+                || (round.my_move == Move::Paper && round.other_move == Move::Rock);
 
-            round.draw = pair.0 == pair.1;
+            round.draw = round.my_move == round.other_move;
 
             round.score = round.move_score
                 + if round.win {

@@ -37,6 +37,7 @@ fn main() {
         2022 => match day {
             1 => year2022::day01::puzzle(),
             2 => year2022::day02::puzzle(),
+            3 => year2022::day03::puzzle(),
             _ => println!("Invalid day"),
         },
         _ => println!("Invalid year"),
