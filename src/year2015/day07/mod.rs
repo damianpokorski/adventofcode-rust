@@ -132,7 +132,7 @@ fn process(wires: Vec<Wire>) -> Vec<Wire> {
 
         let mut finished = true;
         for wire_index in 0..wires_length {
-            let mut current_wire = &mut wires[wire_index];
+            let current_wire = &mut wires[wire_index];
 
             println!("{:?}", current_wire.target);
             println!("{:?}", current_wire.evaluable());

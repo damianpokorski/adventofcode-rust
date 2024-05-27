@@ -43,13 +43,13 @@ fn part2() -> i32 {
     let contents = puzzle_data(std::file!());
     for line in contents.split("\n").into_iter() {
         println!("{0}", line);
-        let mut buffer = line.clone().to_string();
+        let mut buffer = line.to_string();
         let mut pass = 0;
         for (replace, replace_str) in &replaces {
             pass += 1;
             println!("[{0}] Before: {1}", pass, buffer);
             buffer = replace
-                .replace_all(&buffer, replace_str.clone())
+                .replace_all(&buffer, *replace_str)
                 .into_owned();
             println!("[{0}] After: {1}", pass, buffer);
         }
