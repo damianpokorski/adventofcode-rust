@@ -54,6 +54,7 @@ fn main() {
         2016 => match day {
             1 => year2016::day01::puzzle(),
             2 => year2016::day02::puzzle(),
+            3 => year2016::day03::puzzle(),
             _ => println!("Day has not been solved yet"),
         },
         2022 => match day {
