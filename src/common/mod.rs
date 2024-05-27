@@ -1,3 +1,5 @@
+pub mod vectors;
+
 pub fn puzzle_data(module_mod_rs_path: &str) -> String {
     let new_path = (std::path::Path::new(module_mod_rs_path))
         .parent()
